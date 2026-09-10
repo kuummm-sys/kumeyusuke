@@ -178,6 +178,17 @@
   .prof .facts dd a{border-bottom:1px solid var(--blue)}
   @media(max-width:520px){.prof .facts .r{grid-template-columns:1fr;gap:3px}}
 
+  /* ---------- band ---------- */
+  .act{display:grid;grid-template-columns:minmax(200px,280px) 1fr;gap:clamp(24px,4vw,56px);align-items:start;padding-block:clamp(30px,4.5vw,48px);border-top:1px solid var(--line)}
+  .act:first-of-type{border-top:0;padding-top:clamp(6px,1vw,10px)}
+  @media(max-width:780px){.act{grid-template-columns:1fr;gap:20px}}
+  .act-head h3{font-family:var(--round);font-weight:700;font-size:clamp(1.55rem,3.6vw,2.3rem);margin:0;letter-spacing:.03em}
+  .act-head p{margin:12px 0 0;color:var(--ink-dim);font-size:.94rem;line-height:1.95}
+  .act-link{display:inline-block;margin-top:15px;font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid var(--blue);padding-bottom:3px}
+  .act .vids{grid-template-columns:repeat(2,1fr)}
+  .act .vids.two{max-width:640px}
+  @media(max-width:560px){.act .vids{grid-template-columns:1fr}}
+
   /* ---------- works ---------- */
   .grp{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:6px 0 18px;display:flex;align-items:center;gap:12px}
   .grp::after{content:"";flex:1;height:1px;background:var(--line-2)}
@@ -284,6 +295,7 @@
 <nav class="dots" aria-hidden="true">
   <a href="#top" data-s="top" class="on"></a>
   <a href="#profile" data-s="profile"></a>
+  <a href="#band" data-s="band"></a>
   <a href="#works" data-s="works"></a>
   <a href="#use" data-s="use"></a>
   <a href="#req" data-s="req"></a>
@@ -293,6 +305,7 @@
   <div class="nav">
     <span class="mk"><b>くめゆうすけ</b><i>Yusuke Kume — Guitarist &amp; Composer</i></span>
     <a class="lnk" href="#profile">Profile</a>
+    <a class="lnk" href="#band">Band</a>
     <a class="lnk" href="#works">Works</a>
     <a class="lnk" href="#use">BGM</a>
     <a class="lnk" href="#req">Request</a>
@@ -342,7 +355,6 @@
         </div>
         <dl class="facts rv d1">
           <div class="r"><dt>Discog</dt><dd><a href="#">ディスコグラフィ（PAM・トリコンドル・提供曲）は別ページ →</a></dd></div>
-          <div class="r"><dt>Band</dt><dd>PAM ／ トリコンドル</dd></div>
           <div class="r"><dt>Press</dt><dd>ギター・マガジン 本誌 &amp; WEB</dd></div>
           <div class="r"><dt>Gear</dt><dd>Kemper ／ Ibanez AZ</dd></div>
           <div class="r"><dt>Work</dt><dd>作曲・編曲・BGM・ゲーム音楽・カラオケ音源・ギター録音・ノイズ処理</dd></div>
@@ -352,28 +364,51 @@
     </div>
   </section>
 
-  <section class="block" id="works">
+  <section class="block" id="band">
     <div class="wrap">
-      <span class="vlabel vert">Works</span>
-      <div class="sh"><span class="no">02</span><h2>作品<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
+      <span class="vlabel vert">Band</span>
+      <div class="sh"><span class="no">02</span><h2>バンド<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
 
-      <p class="grp">Band — PAM ／ tricondor</p>
-      <div class="vids rv">
-        <div class="vid" data-id="pPcUXt4CIS0">
-          <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Life is</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/pPcUXt4CIS0" target="_blank" rel="noopener">YouTube ↗</a></div>
+      <div class="act rv">
+        <div class="act-head">
+          <h3>PAM</h3>
+          <p>1stアルバム『How have you lived?』をユニバーサル ミュージックから流通。全曲を作曲。</p>
+          <a class="act-link" href="https://linkco.re/g4NgrRf3?lang=ja" target="_blank" rel="noopener">配信で聴く ↗</a>
         </div>
-        <div class="vid" data-id="K7poSbhAvEE">
-          <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Two Sides Of<br>The Same Coin</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/K7poSbhAvEE" target="_blank" rel="noopener">YouTube ↗</a></div>
-        </div>
-        <div class="vid" data-id="ygzUimxqG0Q">
-          <div class="box"><button class="poster"><span class="ptop">tricondor · Music Video</span><span class="pbot"><span class="ttl">Kick Envy</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n">トリコンドル</span><a href="https://www.youtube.com/watch?v=ygzUimxqG0Q" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <div class="vids two">
+          <div class="vid" data-id="pPcUXt4CIS0">
+            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Life is</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/pPcUXt4CIS0" target="_blank" rel="noopener">YouTube ↗</a></div>
+          </div>
+          <div class="vid" data-id="K7poSbhAvEE">
+            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Two Sides Of<br>The Same Coin</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/K7poSbhAvEE" target="_blank" rel="noopener">YouTube ↗</a></div>
+          </div>
         </div>
       </div>
 
-      <p class="grp">Arrange / Production — VTuber・アーティストへ</p>
+      <div class="act rv d1">
+        <div class="act-head">
+          <h3>トリコンドル</h3>
+          <p>札幌のマスロック3ピース。ギターと作曲を担当。</p>
+          <a class="act-link" href="https://tricondor.net" target="_blank" rel="noopener">tricondor.net ↗</a>
+        </div>
+        <div class="vids two">
+          <div class="vid" data-id="ygzUimxqG0Q">
+            <div class="box"><button class="poster"><span class="ptop">tricondor · Music Video</span><span class="pbot"><span class="ttl">Kick Envy</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n">トリコンドル</span><a href="https://www.youtube.com/watch?v=ygzUimxqG0Q" target="_blank" rel="noopener">YouTube ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="works">
+    <div class="wrap">
+      <span class="vlabel vert">Works</span>
+      <div class="sh"><span class="no">03</span><h2>作品<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
+
+      <p class="grp">提供・編曲・オケ制作 — VTuber・アーティストへ</p>
       <div class="vids rv">
         <div class="vid" data-id="wa-nk9Tjiis">
           <div class="box"><button class="poster"><span class="ptop">宮舞モカ · 編曲／オケ制作</span><span class="pbot"><span class="ttl">プリベイラー</span><span class="play">▶</span></span></button></div>
@@ -393,7 +428,7 @@
         <a href="https://www.youtube.com/@kumeguitar/shorts" target="_blank" rel="noopener">ギター演奏の短い動画は <b>YouTube Shorts ↗</b></a>
         <a href="#">CM・劇伴・BGMのまとめは <b>ディスコグラフィページ →</b></a>
       </div>
-      <p class="note">「Arrange / Production」の宮舞モカさん3曲は編曲／オケ制作の担当例です（掲載は許諾確認のうえ順次追加）。</p>
+      <p class="note">宮舞モカさんの3曲は編曲／オケ制作の担当例です（掲載は許諾確認のうえ順次追加）。</p>
     </div>
   </section>
 
@@ -408,7 +443,7 @@
   <section class="block" id="use">
     <div class="wrap">
       <span class="vlabel vert">BGM &amp; Commission</span>
-      <div class="sh"><span class="no">03</span><h2>BGMを使う ／ 依頼する<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
+      <div class="sh"><span class="no">04</span><h2>BGMを使う ／ 依頼する<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
       <div class="doors2">
         <div class="door rv">
           <span class="k">Subscription</span>
@@ -441,7 +476,7 @@
   <section class="block" id="req">
     <div class="wrap">
       <span class="vlabel vert">Request</span>
-      <div class="sh"><span class="no">04</span><h2>依頼する<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
+      <div class="sh"><span class="no">05</span><h2>依頼する<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
       <div class="req">
         <div class="rv">
           <h3>「こういう場面で使う音がほしい」<br>だけで大丈夫です。</h3>
@@ -476,7 +511,7 @@
   <section class="block" id="contact">
     <div class="wrap">
       <span class="vlabel vert">Contact</span>
-      <div class="sh"><span class="no">05</span><h2>相談・お問い合わせ<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
+      <div class="sh"><span class="no">06</span><h2>相談・お問い合わせ<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
       <div class="cform">
         <p class="cf-lead rv">依頼の相談、BGMサブスクの質問、その他なんでも。ざっくりで大丈夫です。ふつう2〜3日以内に返します。</p>
 
