@@ -238,6 +238,12 @@
   .door .fx{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
   .door .fx li{position:relative;padding-left:18px;font-size:.9rem;color:var(--ink-dim)}
   .door .fx li::before{content:"";position:absolute;left:0;top:.68em;width:7px;height:7px;border:1.4px solid var(--blue);border-radius:50%}
+  .door .plans{margin:4px 0 0;padding:0;border-top:1px solid var(--line)}
+  .door .plans>div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid var(--line-2)}
+  .door .plans dt{margin:0;flex:none;font-family:var(--grot);font-weight:700;font-size:1.05rem;color:var(--red);white-space:nowrap}
+  .door .plans dt span{font-family:var(--mono);font-weight:400;font-size:.62rem;color:var(--ink-faint);margin-left:2px}
+  .door .plans dd{margin:0;font-size:.8rem;line-height:1.6;color:var(--ink-dim);text-align:right}
+  .door .rnote{margin:14px 0 0;font-size:.76rem;color:var(--ink-faint);line-height:1.8}
 
   .svc{margin:26px 0 0;padding:0;list-style:none;border-top:1.5px solid var(--ink)}
   .svc li{padding:13px 0 13px 20px;border-bottom:1px solid var(--line-2);font-size:.96rem;position:relative}
@@ -450,12 +456,12 @@
           <span class="k">Subscription</span>
           <h3>作りためたトラックを、<br>月額で聴く</h3>
           <p>映像・配信・ゲーム・店舗のBGMに。会員でいるあいだはライブラリを自由にダウンロード。新作は不定期でふえます。</p>
-          <ul class="fx">
-            <li>商用利用OK</li>
-            <li>クレジット表記は不要</li>
-            <li>解約はいつでも</li>
-          </ul>
-          <div class="val">月額 <b>¥500</b> 〜 ／ 3プラン</div>
+          <dl class="plans">
+            <div><dt>¥500<span>/月</span></dt><dd>個人・非商用<br>ストリーミング＋個人利用DL</dd></div>
+            <div><dt>¥2,500<span>/月</span></dt><dd>商用利用OK・全曲DL<br>クレジット表記不要</dd></div>
+            <div><dt>¥5,000<span>/月</span></dt><dd>商用＋制作向け<br>ステム配布・調整リクエスト月1回</dd></div>
+          </dl>
+          <p class="rnote">解約はいつでも。会員中に着手した作品は、解約後も使い続けられます。</p>
           <span class="go">ライブラリを見る →</span>
         </div>
         <div class="door rv d1">
