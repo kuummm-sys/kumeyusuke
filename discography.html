@@ -69,7 +69,8 @@
   .act-head h3{font-family:var(--round);font-weight:700;font-size:clamp(1.3rem,3vw,1.75rem);margin:0;letter-spacing:.03em}
   .act-head .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--ink-faint);margin:8px 0 0;text-transform:uppercase}
   .act-head p{margin:10px 0 0;color:var(--ink-dim);font-size:.92rem;line-height:1.9;max-width:560px}
-  .act-head .act-link{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border-bottom:1.4px solid transparent;transition:.16s}
+  .act-head .act-link{display:inline-block;margin-top:12px;margin-right:22px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border-bottom:1.4px solid transparent;transition:.16s}
+  .release-head .act-link{margin-right:0}
   .act-head .act-link:hover{border-color:var(--blue)}
 
   .grp{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:6px 0 18px}
@@ -101,6 +102,14 @@
   .tracks li{display:flex;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:.86rem}
   .tracks .tn{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);flex:none;width:1.4em}
   .tracks .tt{color:var(--ink)}
+
+  .release{margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
+  .release:first-of-type{margin-top:28px}
+  .release-head h4{font-family:var(--round);font-weight:700;font-size:1.15rem;margin:0;letter-spacing:.03em}
+  .release-head .meta{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--ink-faint);margin:8px 0 0;text-transform:uppercase}
+  .release-head .act-link{display:inline-block;margin-top:12px}
+  .release .tracks{margin-top:20px}
+  .release .vids{margin-top:20px}
 
   .clist{margin:26px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
   .clist li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-2)}
@@ -140,37 +149,86 @@
     <div class="wrap">
       <div class="sh"><span class="no">01</span><h2>PAM</h2></div>
       <div class="act-head">
-        <h3>How have you lived?</h3>
-        <p class="meta">2019 ／ UNIVERSAL MUSIC JAPAN ／ 1st Album ／ 作曲：久米優佑（全曲）</p>
-        <p>高橋宏貴（ELLEGARDEN / THE PREDATORS）とのインストデュオ。ギター・マガジンにも掲載。</p>
+        <h3>PAM</h3>
+        <p>高橋宏貴（ELLEGARDEN / THE PREDATORS）とのインストデュオ。キャッチーでテクニカルな楽曲を独自の空気感で聴かせる。</p>
         <a class="act-link" href="http://pam-band.com/" target="_blank" rel="noopener">PAM 公式サイト ↗</a>
-        <div class="streams">
-          <a href="https://open.spotify.com/album/48ZhonwiHOM0krmqyD4HNx" target="_blank" rel="noopener">Spotify ↗</a>
-          <a href="https://music.apple.com/jp/album/how-have-you-lived/1487577443" target="_blank" rel="noopener">Apple Music ↗</a>
+        <a class="act-link" href="http://pam-band.com/disks/" target="_blank" rel="noopener">全リリース情報（購入・配信）↗</a>
+      </div>
+
+      <div class="release">
+        <div class="release-head">
+          <h4>LIFE IS</h4>
+          <span class="meta">2024.10.02 ／ Single</span>
+        </div>
+        <div class="vids two">
+          <div class="vid">
+            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Life is</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/pPcUXt4CIS0" target="_blank" rel="noopener">YouTube ↗</a></div>
+          </div>
         </div>
       </div>
-      <ol class="tracks">
-        <li><span class="tn">01</span><span class="tt">Do-Chi-Touch</span></li>
-        <li><span class="tn">02</span><span class="tt">Dimension</span></li>
-        <li><span class="tn">03</span><span class="tt">Friday's Messenger</span></li>
-        <li><span class="tn">04</span><span class="tt">Sunpiazza</span></li>
-        <li><span class="tn">05</span><span class="tt">Like A Fresh</span></li>
-        <li><span class="tn">06</span><span class="tt">Speak Of The Devil</span></li>
-        <li><span class="tn">07</span><span class="tt">K's Blow</span></li>
-        <li><span class="tn">08</span><span class="tt">Mirage</span></li>
-        <li><span class="tn">09</span><span class="tt">Stunning</span></li>
-        <li><span class="tn">10</span><span class="tt">Ray ～How have you lived?～</span></li>
-      </ol>
-      <div class="vids two">
-        <div class="vid">
-          <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Life is</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/pPcUXt4CIS0" target="_blank" rel="noopener">YouTube ↗</a></div>
+
+      <div class="release">
+        <div class="release-head">
+          <h4>TWO SIDES OF THE SAME COIN</h4>
+          <span class="meta">2021.09.15 ／ EP ／ Understanding Label</span>
+          <a class="act-link" href="https://linkco.re/vEUGmZSs?lang=ja" target="_blank" rel="noopener">配信・購入リンクまとめ ↗</a>
         </div>
-        <div class="vid">
-          <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Two Sides Of<br>The Same Coin</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/K7poSbhAvEE" target="_blank" rel="noopener">YouTube ↗</a></div>
+        <ol class="tracks">
+          <li><span class="tn">01</span><span class="tt">Moon Light</span></li>
+          <li><span class="tn">02</span><span class="tt">Two Sides Of The Same Coin</span></li>
+          <li><span class="tn">03</span><span class="tt">Another World</span></li>
+          <li><span class="tn">04</span><span class="tt">A Sunny Day</span></li>
+          <li><span class="tn">05</span><span class="tt">Rainys</span></li>
+        </ol>
+        <div class="vids two">
+          <div class="vid">
+            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Two Sides Of<br>The Same Coin</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/K7poSbhAvEE" target="_blank" rel="noopener">YouTube ↗</a></div>
+          </div>
         </div>
       </div>
+
+      <div class="release">
+        <div class="release-head">
+          <h4>Worth Trying</h4>
+          <span class="meta">2020.05.20 ／ Album ／ Understanding Label</span>
+          <a class="act-link" href="https://tower.jp/item/5039133/Worth-Trying" target="_blank" rel="noopener">タワーレコード ↗</a>
+        </div>
+        <ol class="tracks">
+          <li><span class="tn">01</span><span class="tt">Never Fast</span></li>
+          <li><span class="tn">02</span><span class="tt">Tough Night</span></li>
+          <li><span class="tn">03</span><span class="tt">Worth Trying</span></li>
+          <li><span class="tn">04</span><span class="tt">Resurrection</span></li>
+          <li><span class="tn">05</span><span class="tt">Bruise Of Memorie</span></li>
+          <li><span class="tn">06</span><span class="tt">Slow Blinker</span></li>
+          <li><span class="tn">07</span><span class="tt">Quaternity</span></li>
+          <li><span class="tn">08</span><span class="tt">Embrace The Crazy</span></li>
+          <li><span class="tn">09</span><span class="tt">Deeper</span></li>
+          <li><span class="tn">10</span><span class="tt">The Wanderer</span></li>
+        </ol>
+      </div>
+
+      <div class="release">
+        <div class="release-head">
+          <h4>How have you lived?</h4>
+          <span class="meta">2019.09.04 ／ 1st Album ／ UNIVERSAL MUSIC JAPAN ／ 作曲：久米優佑（全曲）</span>
+          <a class="act-link" href="https://tower.jp/item/4936370/How-have-you-lived--" target="_blank" rel="noopener">タワーレコード ↗</a>
+        </div>
+        <ol class="tracks">
+          <li><span class="tn">01</span><span class="tt">Do-Chi-Touch</span></li>
+          <li><span class="tn">02</span><span class="tt">Dimension</span></li>
+          <li><span class="tn">03</span><span class="tt">Friday's Messenger</span></li>
+          <li><span class="tn">04</span><span class="tt">Sunpiazza</span></li>
+          <li><span class="tn">05</span><span class="tt">Like A Fresh</span></li>
+          <li><span class="tn">06</span><span class="tt">Speak Of The Devil</span></li>
+          <li><span class="tn">07</span><span class="tt">K's Blow</span></li>
+          <li><span class="tn">08</span><span class="tt">Mirage</span></li>
+          <li><span class="tn">09</span><span class="tt">Stunning</span></li>
+          <li><span class="tn">10</span><span class="tt">Ray ～How have you lived?～</span></li>
+        </ol>
+      </div>
+
       <ul class="clist">
         <li><span class="ct">A New Door</span><span class="cd">PAM 楽曲・作曲：久米優佑<br>株式会社リサイドワン テレビCM 起用曲（2024.12–2026.1 放送）</span></li>
         <li><span class="ct">THE INSIDER</span><span class="cd">2人組音楽ユニット TENSONG との共同制作楽曲（2024.9 発表）</span></li>
