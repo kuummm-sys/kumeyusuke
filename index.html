@@ -495,7 +495,7 @@
       </div>
 
       <div class="bgm-preview" id="bgm-preview">
-        <p class="grp">試聴プレビュー（18秒・全17曲より）</p>
+        <p class="grp">試聴プレビュー（18秒・全36曲より）</p>
         <div class="bgm-grid">
           <div class="bgm-card">
             <div class="bgm-meta"><h5>New Beginnings</h5><span class="tag">Corporate</span></div>
@@ -565,8 +565,84 @@
             <div class="bgm-meta"><h5>Left Behind</h5><span class="tag">Cinematic / Dub</span></div>
             <audio controls preload="none" src="bgm-preview/bgm-17.m4a"></audio>
           </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Melocore</h5><span class="tag">Melodic Hardcore</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-18.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>House</h5><span class="tag">House</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-19.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Late Bloom</h5><span class="tag">Ambient</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-20.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Afterglow</h5><span class="tag">Ambient</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-21.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Winter Light</h5><span class="tag">Piano / Ambient</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-22.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Turning Point</h5><span class="tag">Corporate</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-23.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Evening Bell</h5><span class="tag">Ambient</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-24.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Open Road</h5><span class="tag">Corporate / Drive</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-25.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Creepy And Scary</h5><span class="tag">Horror / Suspense</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-26.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Dream Night</h5><span class="tag">Cinematic</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-27.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Game A</h5><span class="tag">Game</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-28.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Beckoning</h5><span class="tag">Cinematic</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-29.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Horror</h5><span class="tag">Horror</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-30.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Meta Hip-Hop</h5><span class="tag">Hip Hop</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-31.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Noctilucence</h5><span class="tag">Ambient</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-32.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Over Again</h5><span class="tag">Emotional</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-33.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Redline</h5><span class="tag">Hard Techno</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-34.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Rising Sun</h5><span class="tag">Japanese EDM</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-35.m4a"></audio>
+          </div>
+          <div class="bgm-card" hidden>
+            <div class="bgm-meta"><h5>Undertow</h5><span class="tag">Ambient</span></div>
+            <audio controls preload="none" src="bgm-preview/bgm-36.m4a"></audio>
+          </div>
         </div>
-        <div class="bgm-more-wrap"><button class="bgm-showmore" id="bgmShowMore" type="button">+ 11曲を表示</button></div>
+        <div class="bgm-more-wrap"><button class="bgm-showmore" id="bgmShowMore" type="button">+ 30曲を表示</button></div>
         <p class="bgm-note">試聴は18秒のダイジェストです。フル尺・高音質でのダウンロードは会員限定。</p>
       </div>
     </div>
@@ -705,7 +781,7 @@
       var open=hiddenCards.length===0;
       if(open){
         document.querySelectorAll('.bgm-grid .bgm-card').forEach(function(c,i){ if(i>=6) c.hidden=true; });
-        bgmBtn.textContent='+ 11曲を表示';
+        bgmBtn.textContent='+ 30曲を表示';
       } else {
         hiddenCards.forEach(function(c){ c.hidden=false; });
         bgmBtn.textContent='閉じる';
