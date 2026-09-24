@@ -412,7 +412,7 @@
         <div class="door rv">
           <span class="k">Subscription</span>
           <h3>BGMも、自作の曲も、<br>月額で聴く</h3>
-          <p>映像・配信・ゲーム・店舗で使えるBGMに加えて、BGM以外に作った曲も聴けます。会員でいるあいだはライブラリを自由にダウンロード。新作は不定期でふえます。</p>
+          <p>映像・配信・ゲーム・店舗で使えるBGMに加えて、BGM以外に作った曲も聴けます。会員でいるあいだはライブラリを自由にダウンロード。新しい曲も順次追加していきます。</p>
           <dl class="plans">
             <div><dt><a href="https://payhip.com/b/4oxcs" target="_blank" rel="noopener">¥500<span>/月</span></a></dt><dd>個人・非商用<br>ストリーミング＋個人利用DL</dd></div>
             <div><dt><a href="https://payhip.com/b/4oxcs" target="_blank" rel="noopener">¥2,500<span>/月</span></a></dt><dd>商用利用OK・全曲DL<br>BGMはクレジット表記不要</dd></div>
@@ -656,7 +656,7 @@
       <span class="vlabel vert">Contact</span>
       <div class="sh"><span class="no">05</span><h2>相談・お問い合わせ<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
       <div class="cform">
-        <p class="cf-lead rv">依頼の相談、BGMサブスクの質問、その他なんでも。ざっくりで大丈夫です。ふつう2〜3日以内に返します。</p>
+        <p class="cf-lead rv">依頼の相談、音楽ライブラリ（サブスク）の質問、その他なんでも。ざっくりで大丈夫です。通常2〜3日以内に返信します。</p>
 
         <form class="form rv d1" action="https://formspree.io/f/xjyvlvyj" method="POST" novalidate>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -680,7 +680,7 @@
                 <option>ゲームBGM・オリジナルBGM</option>
                 <option>ギター録音（レコーディング）</option>
                 <option>ノイズ処理・整音</option>
-                <option>BGMサブスクについて</option>
+                <option>音楽ライブラリ（サブスク）について</option>
                 <option>その他</option>
               </select>
             </div>
@@ -849,7 +849,7 @@
       btn.disabled=true; setMsg('送信中…','ok');
       fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
         .then(function(r){
-          if(r.ok){ form.reset(); setMsg('送信しました。ふつう2〜3日以内に返信します。','ok'); }
+          if(r.ok){ form.reset(); setMsg('送信しました。通常2〜3日以内に返信します。','ok'); }
           else{ return r.json().then(function(d){ throw new Error((d && d.errors && d.errors[0] && d.errors[0].message) || '送信に失敗しました'); }); }
         })
         .catch(function(err){ setMsg((err && err.message ? err.message : '送信に失敗しました')+'。お手数ですが X のDMからお願いします。','err'); })
