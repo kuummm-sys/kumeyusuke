@@ -91,9 +91,11 @@
   .hero-slides,.hero-slide,.hero-shade{position:absolute;inset:0}
   .hero-slide{opacity:0;transition:opacity 1.4s ease}
   .hero-slide.is-active{opacity:1}
-  .hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
-  .hero-slide:nth-child(2) img{object-position:center 33%}
-  .hero-slide:nth-child(3) img{object-position:center 38%}
+  .hero-slide picture{display:block;width:100%;height:100%}
+  .hero-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+  .hero-slide:nth-child(2) img{filter:brightness(.58)}
+  .hero-slide:nth-child(5) img{filter:brightness(.75)}
+  .hero-slide:nth-child(7) img{filter:brightness(.85)}
   .hero-shade{background:linear-gradient(90deg,rgba(10,12,23,.56),rgba(10,12,23,.34) 55%,rgba(10,12,23,.5)),linear-gradient(0deg,rgba(10,12,23,.3),transparent 35%)}
   .hero .inner{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:auto;text-align:center}
   .hero .lead{max-width:100%;margin:auto}
@@ -109,7 +111,7 @@
   header:not(.solid) .nav a.contact:hover{background:#fff;color:var(--ink)}
   @media(max-width:600px){
     .hero{padding-top:112px;padding-bottom:80px}
-    .hero-slide img{object-position:55% center}
+    .hero-slide img{object-position:center}
     .hero h1{letter-spacing:-.05em}
     .hero .sub{max-width:20em}
   }
@@ -180,6 +182,7 @@
     display:flex;flex-direction:column;justify-content:space-between;padding:17px;transition:background .3s}
   .vid .poster:hover{background:radial-gradient(130% 130% at 25% 15%,#303036,#18181a)}
   .vid .poster .ptop{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+  .vid .poster .ptop.credit{line-height:1.7;color:rgba(255,255,255,.78)}
   .vid .poster .pbot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
   .vid .poster .ttl{font-family:var(--round);font-weight:700;font-size:1.02rem;line-height:1.4;letter-spacing:.02em}
   .vid .poster .play{flex:none;width:40px;height:40px;border:1.4px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;font-size:.64rem;transition:.2s}
@@ -187,6 +190,7 @@
   .vid .box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .vid .ft{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;background:var(--ink)}
   .vid .ft .n{font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,.45)}
+  .vid .ft .n.credit{line-height:1.6;color:rgba(255,255,255,.72)}
   .vid .ft a{font-family:var(--mono);font-size:.62rem;letter-spacing:.04em;color:rgba(255,255,255,.82);border-bottom:1px solid var(--red);padding-bottom:1px}
   .vid .ft a:hover{color:#fff}
   .wlinks{margin-top:34px;display:flex;flex-wrap:wrap;gap:24px;font-family:var(--mono);font-size:.7rem}
@@ -320,9 +324,16 @@
 
   <section class="hero" id="top">
     <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide is-active"><img src="assets/hero-stage-red.jpg" alt="" fetchpriority="high"></div>
-      <div class="hero-slide"><img src="assets/hero-stage-stage.jpg" alt=""></div>
-      <div class="hero-slide"><img src="assets/hero-stage-orange.jpg" alt=""></div>
+      <div class="hero-slide is-active"><picture><source media="(max-width: 600px)" srcset="assets/hero-01-mobile.webp"><img src="assets/hero-01-desktop.webp" alt="" fetchpriority="high"></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-02-mobile.webp"><img data-src="assets/hero-02-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-03-mobile.webp"><img data-src="assets/hero-03-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-04-mobile.webp"><img data-src="assets/hero-04-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-05-mobile.webp"><img data-src="assets/hero-05-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-06-mobile.webp"><img data-src="assets/hero-06-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-07-mobile.webp"><img data-src="assets/hero-07-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-08-mobile.webp"><img data-src="assets/hero-08-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-09-mobile.webp"><img data-src="assets/hero-09-desktop.webp" alt=""></picture></div>
+      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-10-mobile.webp"><img data-src="assets/hero-10-desktop.webp" alt=""></picture></div>
     </div>
     <div class="hero-shade" aria-hidden="true"></div>
     <div class="inner">
@@ -429,16 +440,16 @@
         <p class="grp">自作曲</p>
         <div class="vids rv">
           <div class="vid" data-id="wa-nk9Tjiis">
-            <div class="box"><button class="poster"><span class="ptop">宮舞モカ · 作詞作曲・編曲</span><span class="pbot"><span class="ttl">プリベイラー</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">宮舞モカ</span><a href="https://youtu.be/wa-nk9Tjiis" target="_blank" rel="noopener">YouTube ↗</a></div>
+            <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">プリベイラー</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/wa-nk9Tjiis" target="_blank" rel="noopener">YouTube ↗</a></div>
           </div>
           <div class="vid" data-id="-jNYaVf505Y">
-            <div class="box"><button class="poster"><span class="ptop">宮舞モカ · 作詞作曲・編曲</span><span class="pbot"><span class="ttl">仮想王様</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">宮舞モカ</span><a href="https://youtu.be/-jNYaVf505Y" target="_blank" rel="noopener">YouTube ↗</a></div>
+            <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">仮想王様</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/-jNYaVf505Y" target="_blank" rel="noopener">YouTube ↗</a></div>
           </div>
           <div class="vid" data-id="5v8iyAh-rEc">
-            <div class="box"><button class="poster"><span class="ptop">宮舞モカ · 作詞作曲・編曲</span><span class="pbot"><span class="ttl">会いたい屋</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">宮舞モカ</span><a href="https://youtu.be/5v8iyAh-rEc" target="_blank" rel="noopener">YouTube ↗</a></div>
+            <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">会いたい屋</span><span class="play">▶</span></span></button></div>
+            <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/5v8iyAh-rEc" target="_blank" rel="noopener">YouTube ↗</a></div>
           </div>
         </div>
         <div class="bgm-grid">
@@ -746,16 +757,43 @@
     });
   }
 
-  /* one quiet stage-photo transition; first image stays fixed for reduced motion */
-  var slides=document.querySelectorAll('.hero-slide');
+  /* Load one upcoming stage photo at a time, after the initial page load. */
+  var slides=[].slice.call(document.querySelectorAll('.hero-slide'));
   if(!reduce && slides.length>1){
     var slideIndex=0;
-    setInterval(function(){
+    function preloadSlide(index){
+      if(index===0) return;
+      var slide=slides[index];
+      if(slide.dataset.state) return;
+      slide.dataset.state='loading';
+      var img=slide.querySelector('img');
+      var source=slide.querySelector('source');
+      img.addEventListener('load',function(){
+        var decoded=img.decode ? img.decode() : Promise.resolve();
+        decoded.catch(function(){}).then(function(){ slide.dataset.state='ready'; });
+      },{once:true});
+      img.addEventListener('error',function(){ slide.dataset.state='error'; },{once:true});
+      source.srcset=source.dataset.srcset;
+      img.src=img.dataset.src;
+    }
+    function advanceSlide(){
       if(document.hidden) return;
+      var next=(slideIndex+1)%slides.length;
+      if(next!==0 && slides[next].dataset.state!=='ready'){
+        preloadSlide(next);
+        return;
+      }
       slides[slideIndex].classList.remove('is-active');
-      slideIndex=(slideIndex+1)%slides.length;
-      slides[slideIndex].classList.add('is-active');
-    },5500);
+      slides[next].classList.add('is-active');
+      slideIndex=next;
+      preloadSlide((next+1)%slides.length);
+    }
+    function startSlides(){
+      preloadSlide(1);
+      setInterval(advanceSlide,5500);
+    }
+    if(document.readyState==='complete') startSlides();
+    else addEventListener('load',startSlides,{once:true});
   }
 
   /* reveals */
