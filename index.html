@@ -84,7 +84,8 @@
   .nav a.lnk:hover{opacity:.55}
   .nav a.contact{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;border:1.4px solid var(--blue);color:var(--blue);padding:9px 16px;border-radius:22px;transition:.16s}
   .nav a.contact:hover{background:var(--blue);color:#fff}
-  @media(max-width:860px){.nav a.lnk{display:none}}
+  @media(max-width:860px){.nav a.lnk:not(.live){display:none}}
+  @media(max-width:600px){.nav{gap:10px}.nav .mk i{display:none}.nav a.contact{padding:7px 10px}.nav a.live{font-size:.6rem}}
 
   /* ---------- photo hero ---------- */
   .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:#15171b;color:#fff;padding:104px var(--pad) 80px}
@@ -314,6 +315,7 @@
     <span class="mk"><b>くめゆうすけ</b><i>Yusuke Kume — Guitarist &amp; Composer</i></span>
     <a class="lnk" href="#profile">About</a>
     <a class="lnk" href="#band">Band</a>
+    <a class="lnk live" href="live.html">Live</a>
     <a class="lnk" href="#use">BGM</a>
     <a class="lnk" href="#req">Request</a>
     <a class="contact" href="#contact">Contact</a>
