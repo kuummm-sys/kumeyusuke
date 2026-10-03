@@ -192,3 +192,25 @@ main .lede,main h1,main h2,main h3,main h4{color:inherit}
 @media (prefers-reduced-motion:reduce){.v5-wave i{animation:none}}
 .motion-paused .v5-wave i{animation-play-state:paused}
 .layout-request .req-intro>*{margin-left:0!important;margin-right:0!important;max-width:40em;text-align:left!important}
+
+/* ===== EXPLORE 別パターン（見比べ用） ===== */
+.ex-string #explore .type-link,.ex-type #explore .type-link{position:relative;overflow:hidden;opacity:1!important}
+.ex-string #explore .intro-links:hover .type-link:not(:hover),.ex-type #explore .intro-links:hover .type-link:not(:hover){opacity:.4!important}
+.ex-string #explore .type-link>*,.ex-type #explore .type-link>*{position:relative;z-index:1}
+.xl{display:inline-block;will-change:transform}
+/* 弦：行が青く塗られ、文字が白く波打つ */
+.ex-string #explore .type-link:before{content:"";position:absolute;inset:0;background:var(--blue);transform:scaleY(0);transform-origin:50% 100%;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:0}
+.ex-string #explore .type-link:nth-child(4):before{background:var(--red)}
+.ex-string #explore .type-link:is(:hover,:focus-visible):before{transform:none}
+.ex-string #explore .type-link:is(:hover,:focus-visible) :is(.card-title,small,.arrow){color:#fff!important;-webkit-text-stroke:0!important;transform:none!important}
+.ex-string #explore .type-link{padding-left:20px!important;padding-right:20px!important;transition:padding .5s}
+.ex-string #explore .type-link:is(:hover,:focus-visible){padding-left:44px!important}
+.ex-string .ex-string{position:absolute!important;left:0;right:0;bottom:-2px;width:100%;height:40px;z-index:1;pointer-events:none}
+.ex-string .ex-string path{fill:none;stroke:var(--red);stroke-width:2}
+.ex-string #explore .type-link:is(:hover,:focus-visible) .ex-string path{stroke:#fff}
+/* 文字：記号から組み上がり、背景に白抜きの単語が流れる */
+.ex-type .ex-marquee{position:absolute!important;inset:0;display:flex;align-items:center;white-space:nowrap;z-index:0!important;opacity:0;transition:opacity .4s;pointer-events:none}
+.ex-type .ex-marquee span{display:inline-block;padding-right:.5em;font-size:clamp(3rem,7.5vw,8rem);letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(39,67,199,.35);animation:v5-marq 14s linear infinite}
+.ex-type #explore .type-link:is(:hover,:focus-visible) .ex-marquee{opacity:1}
+.ex-type #explore .type-link:is(:hover,:focus-visible) .card-title{color:var(--red)!important;-webkit-text-stroke:0!important}
+@keyframes v5-marq{to{transform:translateX(-100%)}}

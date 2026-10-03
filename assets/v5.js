@@ -188,7 +188,65 @@
   if (hh) setTimeout(() => hh.classList.add('v5-in'), 300);
 
   /* ---------- EXPLORE：写真がカーソルに付いてくる ---------- */
-  const links = document.querySelectorAll('#explore .type-link[data-preview]');
+  // 見比べ用：?explore=string（弦）／?explore=type（文字）／指定なし＝写真
+  const exMode = (new URLSearchParams(location.search).get('explore') || '').toLowerCase();
+  const exLinks = [...document.querySelectorAll('#explore .type-link')];
+  if (exLinks.length && (exMode === 'string' || exMode === 'type')) {
+    document.documentElement.classList.add('ex-' + exMode);
+    exLinks.forEach(a => {
+      const t = a.querySelector('.card-title');
+      const word = t.textContent.trim();
+      t.setAttribute('aria-label', word);
+      t.innerHTML = [...word].map((ch, i) => `<span class="xl" aria-hidden="true" style="--i:${i}">${ch}</span>`).join('');
+      const chars = [...t.querySelectorAll('.xl')];
+      if (exMode === 'string') {
+        const svg = document.createElementNS(NS, 'svg');
+        svg.setAttribute('class', 'ex-string'); svg.setAttribute('viewBox', '0 0 1000 40'); svg.setAttribute('preserveAspectRatio', 'none'); svg.setAttribute('aria-hidden', 'true');
+        const path = document.createElementNS(NS, 'path'); svg.appendChild(path); a.appendChild(svg);
+        let t0 = -1, px = .3, rafX = 0;
+        const flat = 'M0,20 L1000,20';
+        path.setAttribute('d', flat);
+        const frame = now => {
+          const dt = (now - t0) / 1000, A = Math.exp(-dt * 2.6);
+          chars.forEach((c, i) => {
+            const y = 14 * A * Math.sin(dt * 2 * Math.PI * 5 - i * .75);
+            const r = 4 * A * Math.cos(dt * 2 * Math.PI * 5 - i * .75);
+            c.style.transform = `translateY(${y.toFixed(2)}px) rotate(${r.toFixed(2)}deg)`;
+          });
+          const pts = [];
+          for (let k = 0; k <= 50; k++) {
+            const u = k / 50, sh = u < px ? u / px : (1 - u) / (1 - px);
+            pts.push(`${u * 1000},${(20 + 16 * A * sh * Math.cos(dt * 2 * Math.PI * 9)).toFixed(2)}`);
+          }
+          path.setAttribute('d', 'M' + pts.join(' L'));
+          rafX = A > .02 ? requestAnimationFrame(frame) : 0;
+          if (!rafX) { chars.forEach(c => c.style.transform = ''); path.setAttribute('d', flat); }
+        };
+        a.addEventListener('pointerenter', e => {
+          if (still()) return;
+          const r = a.getBoundingClientRect(); px = Math.min(.85, Math.max(.15, (e.clientX - r.left) / r.width));
+          t0 = performance.now(); if (!rafX) rafX = requestAnimationFrame(frame);
+        });
+      } else {
+        const marquee = document.createElement('span');
+        marquee.className = 'ex-marquee'; marquee.setAttribute('aria-hidden', 'true');
+        marquee.innerHTML = `<span>${(word + '　').repeat(8)}</span><span>${(word + '　').repeat(8)}</span>`;
+        a.prepend(marquee);
+        const G = 'アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEFGHIJKLMNOPQRSTUVWXYZ#/+*';
+        let timer = 0;
+        a.addEventListener('pointerenter', () => {
+          if (still()) return;
+          clearInterval(timer); let f = 0;
+          timer = setInterval(() => {
+            f++;
+            chars.forEach((c, i) => { c.textContent = f > 3 + i * 1.6 ? word[i] : G[Math.floor(Math.random() * G.length)]; });
+            if (f > 4 + word.length * 1.6) { clearInterval(timer); chars.forEach((c, i) => c.textContent = word[i]); }
+          }, 40);
+        });
+      }
+    });
+  }
+  const links = exMode ? [] : document.querySelectorAll('#explore .type-link[data-preview]');
   if (links.length && fine) {
     const pv = document.createElement('div'); pv.className = 'v5-preview'; pv.setAttribute('aria-hidden', 'true');
     const img = document.createElement('img'); img.alt = ''; pv.appendChild(img); document.body.appendChild(pv);
