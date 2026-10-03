@@ -9,7 +9,7 @@
 <meta property="og:description" content="バンドの音、BGM、ゲーム音楽をつくる。楽曲提供・編曲の相談を受け付けています。">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23e2e4e0'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23111'%3Eく%3C/text%3E%3C/svg%3E">
-<title>くめゆうすけ｜ギタリスト・作編曲家</title>
+<title>HOME｜くめゆうすけ</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -118,6 +118,17 @@
   }
   @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
 
+  .hero-sound-stage{position:absolute;right:clamp(20px,4vw,64px);bottom:24px;width:180px;height:180px;z-index:4;display:grid;place-items:center}
+  .hero-visualizer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero-sound{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:82px;height:82px;border:1px solid rgba(255,255,255,.7);border-radius:50%;color:#fff;background:rgba(10,12,23,.35);backdrop-filter:blur(6px);cursor:pointer;transition:background .2s,transform .2s;font-family:var(--round);font-size:.7rem}
+  .hero-sound:hover{background:rgba(10,12,23,.65);transform:scale(1.04)}
+  .hero-sound .icon{font-size:.85rem}
+  .hero-sound-caption{position:absolute;bottom:-4px;left:0;right:0;text-align:center;font-family:var(--mono);font-size:.57rem;color:rgba(255,255,255,.85);letter-spacing:.04em}
+  .hero-sound-stage::before{content:"";position:absolute;width:132px;height:132px;border:1px solid rgba(255,255,255,.36);border-radius:50%;pointer-events:none}
+  .hero.visual-ready .hero-sound-stage::before{display:none}
+  @media(max-width:600px){.hero-sound-stage{width:144px;height:144px;right:16px;bottom:24px}.hero-sound{width:70px;height:70px;font-size:.65rem}.hero-sound-stage::before{width:108px;height:108px}}
+  @media(prefers-reduced-motion:reduce){.hero-sound{transition:none}.hero-sound:hover{transform:none}}
+
   .cbtn{display:inline-flex;align-items:center;gap:13px;font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 4px;transition:color .18s}
   .cbtn .ring{width:56px;height:56px;border-radius:50%;flex:none;display:grid;place-items:center;border:1.4px solid currentColor;font-size:1.15rem;transition:transform .3s var(--ease),background .18s,color .18s,border-color .18s}
   .cbtn:hover .ring{transform:translateX(4px) rotate(8deg);background:var(--blue);border-color:var(--blue);color:#fff}
@@ -128,10 +139,10 @@
   section.block{position:relative;padding-block:clamp(76px,12vw,150px);border-bottom:1px solid var(--line)}
   .sh{position:relative;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;margin-bottom:clamp(40px,6vw,66px)}
   .sh .no{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--blue)}
-  .sh h2{font-family:var(--round);font-weight:700;font-size:clamp(1.85rem,5vw,3.1rem);margin:0;line-height:1.24;letter-spacing:.04em;position:relative;display:inline-block}
-  .sh h2 svg{position:absolute;left:-4px;right:-4px;bottom:-14px;width:calc(100% + 8px);height:12px;overflow:visible}
-  .sh h2 svg path{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round}
-  .js .sh h2 svg path{stroke-dasharray:240;stroke-dashoffset:240;transition:stroke-dashoffset 1s var(--ease)}
+  .sh :is(h1,h2){font-family:var(--round);font-weight:700;font-size:clamp(1.85rem,5vw,3.1rem);margin:0;line-height:1.24;letter-spacing:.04em;position:relative;display:inline-block}
+  .sh :is(h1,h2) svg{position:absolute;left:-4px;right:-4px;bottom:-14px;width:calc(100% + 8px);height:12px;overflow:visible}
+  .sh :is(h1,h2) svg path{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round}
+  .js .sh :is(h1,h2) svg path{stroke-dasharray:240;stroke-dashoffset:240;transition:stroke-dashoffset 1s var(--ease)}
   .js .sh.in h2 svg path{stroke-dashoffset:0}
 
   .vlabel{position:absolute;left:calc(var(--pad) * -1 + 6px);top:0;font-family:var(--mono);font-size:.57rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);height:130px}
@@ -140,7 +151,7 @@
   .prof{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:clamp(32px,5vw,76px);align-items:start}
   @media(max-width:880px){.prof{grid-template-columns:1fr}}
 
-  #profile .sh h2{justify-self:start}
+  #profile .sh :is(h1,h2){justify-self:start}
   .prof .facts{margin-top:34px}
   .prof-photo{margin:0}
   .prof-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:4px;background:#fff}
@@ -300,31 +311,35 @@
   .foot2 .sns a:hover{color:var(--blue)}
   .colo{margin-top:56px;font-family:var(--mono);font-size:.6rem;color:var(--ink-faint);letter-spacing:.04em;line-height:2}
   .colo .dc{display:inline-block;margin-top:9px;border:1px solid var(--line);padding:3px 10px;border-radius:20px}
-</style>
 
-<nav class="dots" aria-hidden="true">
-  <a href="#top" data-s="top" class="on"></a>
-  <a href="#profile" data-s="profile"></a>
-  <a href="#band" data-s="band"></a>
-  <a href="#use" data-s="use"></a>
-  <a href="#req" data-s="req"></a>
-</nav>
 
-<header id="hdr">
-  <div class="nav">
-    <span class="mk"><b>くめゆうすけ</b><i>Yusuke Kume — Guitarist &amp; Composer</i></span>
-    <a class="lnk" href="#profile">About</a>
-    <a class="lnk" href="#band">Band</a>
-    <a class="lnk live" href="live.html">Live</a>
-    <a class="lnk" href="#use">BGM</a>
-    <a class="lnk" href="#req">Request</a>
-    <a class="contact" href="#contact">Contact</a>
-  </div>
-</header>
 
-<main>
+/* Page renewal: the original photo, round lettering and two inks stay. */
+[hidden]{display:none!important}.name-red{color:var(--red)!important}body>header#hdr{position:sticky;background:rgba(239,241,236,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
+body.home>header#hdr{position:absolute;background:transparent;border:0;backdrop-filter:none}
+.nav{max-width:1440px;gap:20px}.nav .mk{flex-shrink:0}.nav #site-menu{display:flex;gap:clamp(9px,1.2vw,18px);align-items:center}.nav a.lnk{display:inline-flex!important;font-size:.61rem;letter-spacing:.07em;color:var(--blue)!important;min-height:40px;align-items:center}.nav a[aria-current=page]{text-decoration:underline;text-underline-offset:7px}
+.nav .mk b{color:var(--ink)!important}.nav .mk i{color:var(--ink-dim)!important}.home .nav a.lnk,.home .nav .mk b{color:#fff!important}.home .nav .mk i{color:#ddd!important}.menu-toggle{display:none}.skip-link{position:absolute;left:20px;top:-100px;z-index:100;background:var(--paper);padding:10px}.skip-link:focus{top:10px}
+.block{overflow:hidden}.vlabel{display:none}.sh{isolation:isolate;grid-template-columns:1fr;padding-top:10px}.sh .no{position:absolute;right:0;top:-.3em;font-family:var(--grot);font-style:normal;font-size:clamp(100px,16vw,200px);line-height:1;font-weight:700;color:var(--blue);opacity:.08;z-index:-1;pointer-events:none;will-change:transform}.sh :is(h1,h2){justify-self:start;font-family:var(--round);font-size:clamp(2rem,5vw,3.4rem)}
+.page-title{padding:65px 0 10px}.page-title h1{font-family:var(--round);font-size:clamp(2.4rem,7vw,5rem);line-height:1.1;color:var(--blue);margin:0 0 24px}.page-title p{max-width:42em;color:var(--ink-dim)}.page-head h1{font-family:var(--round);color:var(--blue)}
+.doors2.single{display:block;max-width:850px}.doors2.single>.door{max-width:none}.intro-links{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);margin-top:24px}.intro-links a{display:grid;grid-template-columns:1fr auto;gap:8px;padding:20px 0;border-bottom:1px solid var(--line);color:var(--blue);font-family:var(--round);font-size:1.2rem}.intro-links a:nth-child(odd){margin-right:30px}.intro-links small{display:block;color:var(--ink-dim);font: .82rem var(--sans);grid-row:2}.intro-links .arrow{grid-column:2;grid-row:1/3;align-self:center}
+.home-compact.block{padding:54px 0}.home-compact .sh{margin-bottom:28px}.home-compact .sh .no{font-size:100px}.news-list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}.news-item{padding:22px 0;border-bottom:1px solid var(--line)}.news-item time{font: .7rem var(--mono);color:var(--blue)}.news-item h3{font-family:var(--round);font-size:1.15rem;margin:5px 0}.news-item p{white-space:pre-wrap;overflow-wrap:anywhere;max-width:50em;font-size:.9rem}.news-item a{color:var(--blue);text-decoration:underline;text-underline-offset:5px}.news-more{display:inline-block;margin-top:20px;color:var(--blue);font-size:.84rem}.empty-note{padding:22px 0;color:var(--ink-dim);font-size:.9rem}.next-show{display:flex;gap:30px;align-items:baseline}.next-show time{font-family:var(--mono);color:var(--blue)}.next-show h3{margin:0}.next-show a{color:var(--blue);text-decoration:underline}
+.admin-link{font-family:var(--sans);font-size:.7rem;color:var(--ink-dim)}
+.horizontal-label{font-size:.75rem;color:var(--ink-dim);margin:15px 0 0}.slide-controls{display:flex;gap:10px;margin:16px 0}.slide-controls button{border:1px solid var(--blue);border-radius:50%;width:42px;height:42px;background:transparent;color:var(--blue);font:inherit;cursor:pointer}.horizontal-track{display:flex!important;gap:22px!important;overflow-x:auto!important;scroll-snap-type:x proximity;padding-bottom:18px;scrollbar-color:var(--blue) var(--line);scrollbar-width:thin}.horizontal-track>.act{flex:0 0 min(86%,640px);margin:0!important;scroll-snap-align:start}.horizontal-track>.vid{flex:0 0 clamp(260px,45vw,500px);scroll-snap-align:start}.horizontal-track>.bgm-card{flex:0 0 clamp(260px,32vw,350px);scroll-snap-align:start}.horizontal-track:focus-visible{outline-offset:4px}
+.listen-wave{display:inline-flex;gap:3px;height:16px;align-items:center;margin-left:12px}.listen-wave i{display:block;width:2px;height:6px;background:var(--blue)}.listen-wave i:nth-child(2n){height:14px}.preview-play{display:flex;align-items:center;justify-content:space-between;width:100%;border:0;border-top:1px solid var(--line);background:transparent;color:var(--blue);padding:14px 0 5px;font-family:var(--round);cursor:pointer}.bgm-card:is(:hover,:focus-within) .listen-wave i{animation:wave .6s ease-in-out infinite alternate}.listen-wave i:nth-child(2){animation-delay:-.2s}.listen-wave i:nth-child(3){animation-delay:-.4s}@keyframes wave{to{transform:scaleY(.25)}}
+.play-cursor{display:none;position:fixed;z-index:100;border-radius:50%;width:55px;height:55px;background:var(--blue);color:white;font: .68rem var(--mono);pointer-events:none;align-items:center;justify-content:center;transform:translate(-50%,-50%)}@media(hover:hover) and (pointer:fine){.play-cursor.on{display:flex}.listen-zone .poster:hover,.preview-play:hover{cursor:none}}
+.string-intro{position:fixed;inset:0;z-index:150;background:var(--paper);display:grid;place-content:center;pointer-events:none;animation:intro-out .35s 1.15s forwards}.string-intro b{font-family:var(--round);font-size:clamp(2rem,6vw,4rem);text-align:center;animation:name-in .6s .2s both}.string-intro svg{width:min(80vw,540px);height:85px;color:var(--blue)}.string-intro path{fill:none;stroke:currentColor;stroke-width:1;transform-origin:center;animation:pluck .8s ease-out both}.string-intro path:nth-child(2){animation-delay:.05s}.string-intro path:nth-child(3){animation-delay:.1s}@keyframes pluck{0%{transform:scaleY(1)}20%{transform:scaleY(-.8)}40%{transform:scaleY(.5)}70%{transform:scaleY(-.2)}100%{transform:scaleY(0)}}@keyframes name-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes intro-out{to{opacity:0;visibility:hidden}}
+@media(max-width:1150px){.menu-toggle{display:flex;align-items:center;gap:10px;border:1px solid var(--blue);border-radius:25px;color:var(--blue);background:var(--paper);padding:8px 15px;font-family:var(--mono);font-size:.7rem;min-height:40px}.nav{justify-content:space-between}.nav #site-menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px var(--pad);grid-template-columns:repeat(2,1fr);gap:3px 24px;max-height:calc(100svh - 64px);overflow:auto}.nav #site-menu.open{display:grid}.home .nav #site-menu a.lnk{color:var(--blue)!important}.nav #site-menu a.lnk{font-size:.8rem}.nav .mk i{display:none}}
+@media(max-width:600px){.block{padding:48px 0}.page-title{padding-top:45px}.intro-links{grid-template-columns:1fr}.intro-links a:nth-child(odd){margin-right:0}.next-show{flex-direction:column;gap:8px}.sh .no{font-size:110px}.home-compact.block{padding:38px 0}.hero{min-height:100svh}.hero h1{font-size:clamp(2.65rem,10vw,4.5rem)}}
+@media(prefers-reduced-motion:reduce){.string-intro,.play-cursor{display:none!important}.sh .no{transform:none!important}.horizontal-track{scroll-behavior:auto!important}.sh :is(h1,h2) svg path{stroke-dashoffset:0!important}.listen-wave i{animation:none!important}.js .rv{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
 
-  <section class="hero" id="top">
+/* Keep reading content visible; motion belongs to strings and heading strokes. */
+.js .rv,.js .rv.in{opacity:1;transform:none;transition:none}.horizontal-track>.act{display:block}.horizontal-track>.act .vids{width:100%;max-width:none}.horizontal-track>.act .act-head{display:block}
+.doors2.single .door{transform:none;box-shadow:none}.doors2.single .door:hover{transform:none;box-shadow:none}
+
+.wrap.page-title,.wrap.page-head{padding-inline:var(--pad)}
+
+body.home>header#hdr{position:fixed}body.home>header#hdr.solid{background:rgba(239,241,236,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}.home header.solid .nav a.lnk{color:var(--blue)!important}.home header.solid .nav .mk b{color:var(--ink)!important}.home header.solid .nav .mk i{color:var(--ink-dim)!important}
+</style></head><body class="home"><a class="skip-link" href="#main">本文へ</a><header id="hdr"><div class="nav"><a class="mk" href="index.html"><b>くめゆう<span class="name-red">す</span>け</b><i>Yusuke Kume — Guitarist &amp; Composer</i></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">MENU <span aria-hidden="true">＋</span></button><nav id="site-menu" aria-label="メインメニュー"><a class="lnk" href="index.html">HOME</a><a class="lnk" href="about.html">ABOUT</a><a class="lnk" href="band.html">BAND</a><a class="lnk" href="discography.html">DISCOGRAPHY</a><a class="lnk" href="listen.html">LISTEN</a><a class="lnk" href="subscribe.html">SUBSCRIBE</a><a class="lnk" href="live.html">LIVE</a><a class="lnk" href="news.html">NEWS</a><a class="lnk" href="request.html">REQUEST</a><a class="lnk" href="request.html#contact">CONTACT</a></nav></div></header><main id="main"><section class="hero" id="top">
     <div class="hero-slides" aria-hidden="true">
       <div class="hero-slide is-active"><picture><source media="(max-width: 600px)" srcset="assets/hero-01-mobile.webp"><img src="assets/hero-01-desktop.webp" alt="" fetchpriority="high"></picture></div>
       <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-02-mobile.webp"><img data-src="assets/hero-02-desktop.webp" alt=""></picture></div>
@@ -342,386 +357,20 @@
       <div class="lead">
         <h1>Yusuke Kume<span class="dot">.</span></h1>
         <p class="sub">Sound that stays after the last note.</p>
-        <a class="hero-about" href="#profile">ABOUT</a>
+        <a class="hero-about" href="about.html">ABOUT</a>
       </div>
     </div>
     <div class="scroll" aria-hidden="true">SCROLL</div>
-  </section>
-
-  <section class="block" id="profile">
-    <div class="wrap">
-      <span class="vlabel vert">About</span>
-      <div class="sh"><span class="no">01</span><h2>ABOUT<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
-      <div class="prof">
-        <div class="prof-copy rv">
-          <p class="lede">エレキギターを14歳から。PAM、トリコンドルというバンドで、ギターと作曲を担当。</p>
-          <p>2019年、PAMの1stアルバム『How have you lived?』をユニバーサル ミュージックから流通。ギター・マガジンにも掲載。ふだんはアーティストへの楽曲提供、編曲、BGM制作。ディレイとリバーブを重ねたギターを得意とする。制作は自宅スタジオで完結、返事は早め。</p>
-          <dl class="facts">
-            <div class="r"><dt>Discog</dt><dd><a href="discography.html">ディスコグラフィ（PAM・トリコンドル・提供曲）は別ページ →</a></dd></div>
-            <div class="r"><dt>Work</dt><dd>作曲・編曲・BGM・ゲーム音楽・カラオケ音源・ギター録音・ノイズ処理</dd></div>
-            <div class="r"><dt>Base</dt><dd>北海道（全国オンライン対応）</dd></div>
-          </dl>
-        </div>
-        <figure class="prof-photo rv d1"><img src="assets/about-portrait.jpg" alt="久米優佑のアーティスト写真" loading="lazy"></figure>
-      </div>
+    <div class="hero-sound-stage">
+      <canvas class="hero-visualizer" id="hero-visualizer" aria-hidden="true"></canvas>
+      <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="雨のち晴れの試聴を再生"><span class="icon" aria-hidden="true">▶</span><span class="sound-label">音を聴く</span></button>
+      <span class="hero-sound-caption">雨のち晴れ ／ 18秒</span>
     </div>
-  </section>
-
-  <section class="block" id="band">
-    <div class="wrap">
-      <span class="vlabel vert">Band</span>
-      <div class="sh"><span class="no">02</span><h2>バンド<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
-
-      <div class="act rv">
-        <div class="act-head">
-          <h3>PAM</h3>
-          <p>1stアルバム『How have you lived?』をユニバーサル ミュージックから流通。全曲を作曲。</p>
-          <a class="act-link" href="http://pam-band.com/" target="_blank" rel="noopener">PAM 公式 ↗</a>
-        </div>
-        <div class="vids two">
-          <div class="vid" data-id="pPcUXt4CIS0">
-            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Life is</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/pPcUXt4CIS0" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-          <div class="vid" data-id="K7poSbhAvEE">
-            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Two Sides Of<br>The Same Coin</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/K7poSbhAvEE" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="act rv d1">
-        <div class="act-head">
-          <h3>トリコンドル</h3>
-          <p>ギターを担当。</p>
-          <a class="act-link" href="https://tricondor.net" target="_blank" rel="noopener">tricondor.net ↗</a>
-        </div>
-        <div class="vids two">
-          <div class="vid" data-id="ygzUimxqG0Q">
-            <div class="box"><button class="poster"><span class="ptop">tricondor · Music Video</span><span class="pbot"><span class="ttl">Kick Envy</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">トリコンドル</span><a href="https://www.youtube.com/watch?v=ygzUimxqG0Q" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="use">
-    <div class="wrap">
-      <span class="vlabel vert">BGM &amp; Commission</span>
-      <div class="sh"><span class="no">03</span><h2>BGMを使う ／ 依頼する<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
-      <div class="doors2">
-        <div class="door rv">
-          <span class="k">Subscription</span>
-          <h3>BGMも、自作の曲も、<br>月額で聴く</h3>
-          <p>映像・配信・ゲーム・店舗で使えるBGMに加えて、BGM以外に作った曲も聴けます。会員でいるあいだはライブラリを自由にダウンロード。新しい曲も順次追加していきます。</p>
-          <dl class="plans">
-            <div><dt><a href="https://payhip.com/b/4oxcs" target="_blank" rel="noopener">¥500<span>/月</span></a></dt><dd>個人・非商用<br>ストリーミング＋個人利用DL</dd></div>
-            <div><dt><a href="https://payhip.com/b/4oxcs" target="_blank" rel="noopener">¥2,500<span>/月</span></a></dt><dd>商用利用OK・全曲DL<br>BGMはクレジット表記不要</dd></div>
-            <div><dt><a href="https://payhip.com/b/4oxcs" target="_blank" rel="noopener">¥5,000<span>/月</span></a></dt><dd>商用＋制作向け<br>ステム配布・調整リクエスト月1回</dd></div>
-          </dl>
-          <p class="rnote">BGM以外の自作曲を商用で使うときは、クレジット表記（くめゆうすけ）をお願いします。</p>
-          <p class="rnote">解約はいつでも。会員中に着手した作品は、解約後も使い続けられます。</p>
-          <a class="go" href="#bgm-preview">試聴プレビューを見る →</a>
-        </div>
-        <div class="door rv d1">
-          <span class="k">Commission</span>
-          <h3>一から、<br>あなたの作品に</h3>
-          <p>楽曲提供・編曲・ゲームBGM・ギター録音。用途と、目指したい方向を聞いてから作ります。</p>
-          <ul class="fx">
-            <li>仕上がりが速い（急ぎも相談可）</li>
-            <li>修正2回まで込み</li>
-          </ul>
-          <div class="val">相談・お見積り <b>無料</b></div>
-          <a class="go" href="#req">料金と進め方 →</a>
-        </div>
-      </div>
-
-      <div class="bgm-preview" id="bgm-preview">
-        <h3 class="preview-title">試聴</h3>
-        <p class="grp">自作曲</p>
-        <div class="vids rv">
-          <div class="vid" data-id="wa-nk9Tjiis">
-            <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">プリベイラー</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/wa-nk9Tjiis" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-          <div class="vid" data-id="-jNYaVf505Y">
-            <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">仮想王様</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/-jNYaVf505Y" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-          <div class="vid" data-id="5v8iyAh-rEc">
-            <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">会いたい屋</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/5v8iyAh-rEc" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-        </div>
-        <div class="bgm-grid">
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>雨のち晴れ</h5><span class="tag">自作曲</span></div>
-            <audio controls preload="none" src="bgm-preview/ame-nochi-hare.m4a"></audio>
-          </div>
-        </div>
-        <p class="grp">BGM（18秒・全36曲より）</p>
-        <div class="bgm-grid bgm-tracks">
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>New Beginnings</h5><span class="tag">Corporate</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-01.m4a"></audio>
-          </div>
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>Pop Punk</h5><span class="tag">Pop Punk</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-02.m4a"></audio>
-          </div>
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>Rainscape</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-03.m4a"></audio>
-          </div>
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>Suspicious Soil</h5><span class="tag">Suspense</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-04.m4a"></audio>
-          </div>
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>Gather Up The Stars</h5><span class="tag">Cinematic</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-05.m4a"></audio>
-          </div>
-          <div class="bgm-card">
-            <div class="bgm-meta"><h5>Resolve</h5><span class="tag">Anime / Serious</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-06.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Daybreak</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-07.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Quiet Hour</h5><span class="tag">Piano / Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-08.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Clean Guitar</h5><span class="tag">Clean Guitar</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-09.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Atmosphere</h5><span class="tag">Atmospheric Guitar</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-10.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Light Colored</h5><span class="tag">Light Pop</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-11.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>190 Sports</h5><span class="tag">Sports / High Energy</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-12.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Opening Cue</h5><span class="tag">Corporate</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-13.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Cloudiness</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-14.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Line</h5><span class="tag">Minimal / Electronic</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-15.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Tape</h5><span class="tag">Lo-fi</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-16.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Left Behind</h5><span class="tag">Cinematic / Dub</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-17.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Melocore</h5><span class="tag">Melodic Hardcore</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-18.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>House</h5><span class="tag">House</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-19.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Late Bloom</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-20.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Afterglow</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-21.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Winter Light</h5><span class="tag">Piano / Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-22.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Turning Point</h5><span class="tag">Corporate</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-23.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Evening Bell</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-24.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Open Road</h5><span class="tag">Corporate / Drive</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-25.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Creepy And Scary</h5><span class="tag">Horror / Suspense</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-26.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Dream Night</h5><span class="tag">Cinematic</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-27.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Game A</h5><span class="tag">Game</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-28.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Beckoning</h5><span class="tag">Cinematic</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-29.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Horror</h5><span class="tag">Horror</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-30.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Meta Hip-Hop</h5><span class="tag">Hip Hop</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-31.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Noctilucence</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-32.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Over Again</h5><span class="tag">Emotional</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-33.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Redline</h5><span class="tag">Hard Techno</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-34.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Rising Sun</h5><span class="tag">Japanese EDM</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-35.m4a"></audio>
-          </div>
-          <div class="bgm-card" hidden>
-            <div class="bgm-meta"><h5>Undertow</h5><span class="tag">Ambient</span></div>
-            <audio controls preload="none" src="bgm-preview/bgm-36.m4a"></audio>
-          </div>
-        </div>
-        <div class="bgm-more-wrap"><button class="bgm-showmore" id="bgmShowMore" type="button">+ 30曲を表示</button></div>
-        <p class="bgm-note">試聴は18秒のダイジェストです。フル尺・高音質でのダウンロードは会員限定。</p>
-        <div class="wlinks rv">
-          <a href="https://www.youtube.com/@kumeguitar/shorts" target="_blank" rel="noopener">ギター演奏の短い動画は <b>YouTube Shorts ↗</b></a>
-          <a href="discography.html">PAM・トリコンドル・提供曲のまとめは <b>ディスコグラフィページ →</b></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="req">
-    <div class="wrap">
-      <span class="vlabel vert">Request</span>
-      <div class="sh"><span class="no">04</span><h2>依頼する<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
-      <div class="req-intro rv">
-        <h3><span>「こういう場面で使う音がほしい」</span><span>だけで大丈夫です。</span></h3>
-        <p>参考曲や、雰囲気を伝えてもらえれば、そこから組み立てます。急ぎの相談も歓迎です。</p>
-      </div>
-      <div class="req">
-        <div class="rv">
-          <ul class="svc">
-            <li>楽曲提供（作曲・トラック）</li>
-            <li>編曲・アレンジ</li>
-            <li>カラオケ音源制作</li>
-            <li>ゲームBGM・オリジナルBGM</li>
-            <li>ギター録音（レコーディング）</li>
-            <li>ノイズ処理・整音</li>
-          </ul>
-          <p class="rnote">料金は内容で変わります。用途・尺・納期をうかがって、お見積もりをお出しします。</p>
-
-          <div class="tags">
-            <span>エモ</span><span>バンド</span><span>マスロック</span><span>ダンス</span><span>ダブステップ</span><span>ゲーム音楽</span><span>ディレイ／リバーブのギター</span>
-          </div>
-
-          <div class="cta"><a class="cbtn solid" href="#contact"><span class="ring">▸</span> 相談フォームへ</a></div>
-        </div>
-        <div class="steps rv d1">
-          <div class="s"><b>STEP 01</b>相談 ─ 用途・尺・納期・参考曲を聞きます。見積り無料</div>
-          <div class="s"><b>STEP 02</b>試作 ─ 方向のわかる短いデモを送ります</div>
-          <div class="s"><b>STEP 03</b>制作 ─ 決まった方向で仕上げます（修正2回まで込み）</div>
-          <div class="s"><b>STEP 04</b>納品 ─ データ一式をお渡し。権利は契約書のとおり</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="contact">
-    <div class="wrap">
-      <span class="vlabel vert">Contact</span>
-      <div class="sh"><span class="no">05</span><h2>相談・お問い合わせ<svg viewBox="0 0 240 12" preserveAspectRatio="none"><path d="M2 8 C 60 2, 180 2, 238 7"/></svg></h2></div>
-      <div class="cform">
-        <p class="cf-lead rv">依頼の相談、音楽ライブラリ（サブスク）の質問、その他なんでも。ざっくりで大丈夫です。通常2〜3日以内に返信します。</p>
-
-        <form class="form rv d1" action="https://formspree.io/f/xjyvlvyj" method="POST" novalidate>
-          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <input type="hidden" name="_subject" value="くめゆうすけ 公式サイト｜相談・お問い合わせ">
-
-          <div class="fr">
-            <label for="cf-name">お名前 ／ 団体名</label>
-            <input id="cf-name" type="text" name="name" required>
-          </div>
-          <div class="fr">
-            <label for="cf-email">メールアドレス</label>
-            <input id="cf-email" type="email" name="email" required>
-          </div>
-          <div class="fr2">
-            <div class="fr">
-              <label for="cf-kind">相談の種類</label>
-              <select id="cf-kind" name="相談の種類">
-                <option>楽曲提供（作曲・トラック）</option>
-                <option>編曲・アレンジ</option>
-                <option>カラオケ音源制作</option>
-                <option>ゲームBGM・オリジナルBGM</option>
-                <option>ギター録音（レコーディング）</option>
-                <option>ノイズ処理・整音</option>
-                <option>音楽ライブラリ（サブスク）について</option>
-                <option>その他</option>
-              </select>
-            </div>
-            <div class="fr">
-              <label for="cf-budget">ご予算</label>
-              <select id="cf-budget" name="ご予算">
-                <option>まだわからない</option>
-                <option>〜1万円</option>
-                <option>1〜3万円</option>
-                <option>3〜5万円</option>
-                <option>5〜10万円</option>
-                <option>10万円〜</option>
-              </select>
-            </div>
-          </div>
-          <div class="fr">
-            <label for="cf-due">納期の希望 <span class="opt">（任意）</span></label>
-            <input id="cf-due" type="text" name="納期の希望" placeholder="例：11月中／急ぎではない">
-          </div>
-          <div class="fr">
-            <label for="cf-body">内容・参考曲・やりたい雰囲気など</label>
-            <textarea id="cf-body" name="内容" rows="5" required></textarea>
-          </div>
-
-          <button type="submit" class="cbtn solid cf-submit"><span class="ring">▸</span> 送信する</button>
-          <p class="cf-msg" hidden></p>
-        </form>
-
-        <p class="cf-alt rv d2">フォームが使えないときは <a href="https://x.com/7k7km" target="_blank" rel="noopener">X（@7k7km）のDM</a> でも。</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
+    <audio id="hero-audio" preload="none" src="bgm-preview/ame-nochi-hare.m4a"></audio>
+  </section><section class="block home-compact" id="news"><div class="wrap"><div class="sh"><span class="no" aria-hidden="true">01</span><h2>NEWS<svg viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C60 2,180 2,238 7"/></svg></h2></div><div data-news-limit="5" class="news-feed"><p class="empty-note">読み込み中…</p></div><a class="news-more" href="news.html">お知らせの一覧へ ↗</a></div></section><section class="block home-compact" id="next-live"><div class="wrap"><div class="sh"><span class="no" aria-hidden="true">02</span><h2>LIVE<svg viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C60 2,180 2,238 7"/></svg></h2></div><div id="next-show"></div></div></section><section class="block home-compact" id="explore"><div class="wrap"><div class="sh"><span class="no" aria-hidden="true">03</span><h2>EXPLORE<svg viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C60 2,180 2,238 7"/></svg></h2></div><div class="intro-links"><a href="about.html">ABOUT<small>ギターと作曲のこと</small><span class="arrow" aria-hidden="true">↗</span></a><a href="band.html">BAND<small>PAM・トリコンドル</small><span class="arrow" aria-hidden="true">↗</span></a><a href="discography.html">DISCOGRAPHY<small>これまでの作品</small><span class="arrow" aria-hidden="true">↗</span></a><a href="listen.html">LISTEN<small>BGMと自作曲を少し</small><span class="arrow" aria-hidden="true">↗</span></a><a href="subscribe.html">SUBSCRIBE<small>音楽ライブラリの会員プラン</small><span class="arrow" aria-hidden="true">↗</span></a><a href="live.html">LIVE<small>ライブと取り置き予約</small><span class="arrow" aria-hidden="true">↗</span></a><a href="news.html">NEWS<small>お知らせの一覧</small><span class="arrow" aria-hidden="true">↗</span></a><a href="request.html">REQUEST<small>音の依頼・相談</small><span class="arrow" aria-hidden="true">↗</span></a></div></div></section></main><footer>
   <div class="wrap">
     <div class="foot2">
-      <div class="mk"><b>くめゆうすけ</b><i>久米優佑 ／ Guitarist &amp; Composer ／ 北海道</i></div>
+      <div class="mk"><b>くめゆう<span class="name-red">す</span>け</b><i>久米優佑 ／ Guitarist &amp; Composer ／ 北海道</i></div>
       <div class="sns">
         <a href="https://x.com/7k7km">X / @7k7km</a>
         <a href="https://www.instagram.com/kuummm/">Instagram / @kuummm</a>
@@ -730,11 +379,9 @@
         <a href="https://lit.link/kumeyusuke">lit.link / /kumeyusuke</a>
       </div>
     </div>
-    <div class="colo">© 2026 久米優佑</div>
+    <div class="colo">© 2026 久米優佑　<a class="admin-link" href="admin.html">管理者ログイン</a></div>
   </div>
-</footer>
-
-<script>
+</footer><script>
 (function(){
   "use strict";
   document.documentElement.className='js';
@@ -824,6 +471,7 @@
   document.querySelectorAll('.vid').forEach(function(v){
     var id=v.getAttribute('data-id');
     v.querySelector('.poster').addEventListener('click',function(){
+      if(!id){var link=v.querySelector('.ft a');if(link) window.open(link.href,'_blank','noopener');return;}
       var box=v.querySelector('.box');
       var f=document.createElement('iframe');
       f.setAttribute('src','https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1');
@@ -835,7 +483,7 @@
   });
 
   /* contact form -> Formspree (AJAX, graceful fallback) */
-  var form=document.querySelector('.form');
+  var form=document.querySelector('form[action*="formspree.io"]');
   if(form){
     var msg=form.querySelector('.cf-msg');
     var btn=form.querySelector('.cf-submit');
@@ -859,8 +507,158 @@
     });
   }
 })();
-</script>
 
+(()=>{var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;  /* Circular contours follow the spectrum and waveform after the listener presses play. */
+  var hero=document.querySelector('.hero');
+  var soundButton=document.getElementById('hero-sound');
+  var soundLabel=soundButton.querySelector('.sound-label');
+  var soundIcon=soundButton.querySelector('.icon');
+  var heroAudio=document.getElementById('hero-audio');
+  var strings=document.getElementById('hero-visualizer');
+  var pen=strings.getContext && strings.getContext('2d');
+  var audioContext=null,analyser=null,wave=null,freq=null;
+  var width=0,height=0,energy=0,frameId=0;
 
-</body>
-</html>
+  function resizeVisualizer(){
+    if(!pen) return;
+    var bounds=strings.getBoundingClientRect();
+    width=bounds.width; height=bounds.height;
+    var ratio=Math.min(window.devicePixelRatio||1,2);
+    strings.width=Math.round(width*ratio);
+    strings.height=Math.round(height*ratio);
+    pen.setTransform(ratio,0,0,ratio,0,0);
+    drawVisualizer(performance.now());
+  }
+
+  function drawVisualizer(now){
+    if(!pen || !width || !height) return;
+    pen.clearRect(0,0,width,height);
+    var cx=width/2,cy=height/2;
+    var size=Math.min(width,height),base=size*.29,gap=size*.044;
+    for(var ring=0;ring<3;ring++){
+      pen.beginPath();
+      for(var point=0;point<=180;point++){
+        var angle=point/180*Math.PI*2-Math.PI/2;
+        var band=freq?freq[Math.floor((point%90)/90*Math.min(180,freq.length))]/255:0;
+        var sample=wave?(wave[Math.floor(point/180*(wave.length-1))]-128)/128:0;
+        var ripple=reduce?0:energy*(band*12+sample*5+Math.sin(angle*5+now*.0008+ring)*3)*size/180;
+        var radius=base+ring*gap+ripple;
+        var x=cx+Math.cos(angle)*radius,y=cy+Math.sin(angle)*radius;
+        if(point===0) pen.moveTo(x,y); else pen.lineTo(x,y);
+      }
+      pen.closePath();
+      pen.strokeStyle=ring===1?'rgba(255,255,255,.75)':'rgba(255,255,255,.32)';
+      pen.lineWidth=ring===1?1.25:.8;
+      pen.stroke();
+    }
+    var angle=energy*Math.PI*.9-Math.PI/2;
+    pen.beginPath();
+    pen.arc(cx,cy,base+gap,angle,angle+.32+energy*.6);
+    pen.strokeStyle='rgba(226,58,34,.95)';pen.lineWidth=2.5;pen.stroke();
+  }
+
+  function connectAudio(){
+    if(reduce || audioContext || !pen) return;
+    var AudioContextType=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContextType) return;
+    try{
+      audioContext=new AudioContextType();
+      analyser=audioContext.createAnalyser();
+      analyser.fftSize=1024;
+      analyser.smoothingTimeConstant=.78;
+      audioContext.createMediaElementSource(heroAudio).connect(analyser);
+      analyser.connect(audioContext.destination);
+      wave=new Uint8Array(analyser.fftSize);
+      freq=new Uint8Array(analyser.frequencyBinCount);
+    }catch(error){
+      analyser=null; wave=null; freq=null;
+    }
+  }
+
+  function animateVisualizer(now){
+    frameId=0;
+    if(!reduce && analyser && !heroAudio.paused){
+      analyser.getByteTimeDomainData(wave);
+      analyser.getByteFrequencyData(freq);
+      var sum=0;
+      for(var i=0;i<wave.length;i+=4){var sample=(wave[i]-128)/128;sum+=sample*sample;}
+      var target=Math.min(1,Math.sqrt(sum/(wave.length/4))*5.5);
+      energy=energy*.76+target*.24;
+    }else if(!reduce && !heroAudio.paused){
+      energy=energy*.82+.16;
+    }else{
+      energy*=.91;
+    }
+    drawVisualizer(now);
+    if(!heroAudio.paused || energy>.008) frameId=requestAnimationFrame(animateVisualizer);
+  }
+
+  function startVisualizer(){
+    if(!pen || reduce || frameId) return;
+    frameId=requestAnimationFrame(animateVisualizer);
+  }
+
+  if(pen){
+    hero.classList.add('visual-ready');
+    resizeVisualizer();
+    addEventListener('resize',resizeVisualizer,{passive:true});
+  }
+  soundButton.addEventListener('click',function(){
+    if(!heroAudio.paused){heroAudio.pause();return;}
+    connectAudio();
+    if(audioContext && audioContext.state==='suspended') audioContext.resume().catch(function(){});
+    if(heroAudio.ended) heroAudio.currentTime=0;
+    heroAudio.play().catch(function(){
+      soundLabel.textContent='再生できませんでした';
+      soundButton.setAttribute('aria-label','音を再生できませんでした。もう一度試す');
+    });
+  });
+  heroAudio.addEventListener('play',function(){
+    document.querySelectorAll('audio').forEach(function(other){if(other!==heroAudio) other.pause();});
+    hero.classList.add('is-playing');
+    soundButton.setAttribute('aria-pressed','true');
+    soundButton.setAttribute('aria-label','雨のち晴れの試聴を止める');
+    soundLabel.textContent='音を止める';soundIcon.textContent='Ⅱ';
+    startVisualizer();
+  });
+  function soundStopped(){
+    hero.classList.remove('is-playing');
+    soundButton.setAttribute('aria-pressed','false');
+    soundButton.setAttribute('aria-label','雨のち晴れの試聴を再生');
+    soundLabel.textContent='音を聴く';soundIcon.textContent='▶';
+    startVisualizer();
+  }
+  heroAudio.addEventListener('pause',soundStopped);
+  heroAudio.addEventListener('ended',soundStopped);
+  document.querySelectorAll('audio').forEach(function(other){
+    if(other!==heroAudio) other.addEventListener('play',function(){heroAudio.pause();});
+  });
+  document.addEventListener('visibilitychange',function(){if(document.hidden) heroAudio.pause();});
+
+})();
+
+(()=>{
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const toggle=document.querySelector('.menu-toggle'),menu=document.getElementById('site-menu');
+function close(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.querySelector('span').textContent='＋';}
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';menu.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));toggle.querySelector('span').textContent=open?'−':'＋';});
+menu.querySelectorAll('a').forEach(a=>{if(a.getAttribute('href')===location.pathname.split('/').pop() || (location.pathname.endsWith('/') && a.getAttribute('href')==='index.html'))a.setAttribute('aria-current','page');a.addEventListener('click',close);});
+addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){close();toggle.focus();}});
+if(document.body.classList.contains('home')&&!reduced){try{if(!sessionStorage.getItem('string-intro')){const intro=document.createElement('div');intro.className='string-intro';intro.setAttribute('aria-hidden','true');intro.innerHTML='<b>くめゆう<span class="name-red">す</span>け</b><svg viewBox="0 0 540 85"><path d="M0 42 Q270 -20 540 42"/><path d="M0 42 Q270 110 540 42"/><path d="M0 42 Q270 0 540 42"/></svg>';document.body.append(intro);sessionStorage.setItem('string-intro','1');setTimeout(()=>intro.remove(),1600);}}catch(_){}}
+if(!reduced){let ticking=false;function shift(){document.querySelectorAll('.sh .no').forEach(n=>{const box=n.parentElement.getBoundingClientRect();if(box.bottom>0&&box.top<innerHeight)n.style.transform='translateY('+Math.max(-20,Math.min(20,(box.top-innerHeight/2)*.04))+'px)';});ticking=false;}addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(shift);}},{passive:true});shift();}
+document.querySelectorAll('.horizontal-track').forEach(track=>{track.tabIndex=0;const controls=document.createElement('div');controls.className='slide-controls';['前へ','次へ'].forEach((label,i)=>{const btn=document.createElement('button');btn.type='button';btn.textContent=i?'→':'←';btn.setAttribute('aria-label',label);btn.onclick=()=>track.scrollBy({left:(i?1:-1)*track.clientWidth*.8,behavior:reduced?'instant':'smooth'});controls.append(btn);});track.after(controls);});
+document.querySelectorAll('.bgm-card audio').forEach(audio=>{const btn=document.createElement('button');btn.type='button';btn.className='preview-play';btn.innerHTML='<span>PLAY</span><span class="listen-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>';btn.setAttribute('aria-label',audio.closest('.bgm-card').querySelector('h5').textContent+'を試聴');audio.before(btn);btn.onclick=()=>audio.paused?audio.play().catch(()=>{btn.firstElementChild.textContent='再生できませんでした';}):audio.pause();audio.addEventListener('play',()=>{document.querySelectorAll('audio').forEach(a=>{if(a!==audio)a.pause();});btn.firstElementChild.textContent='PAUSE';});audio.addEventListener('pause',()=>btn.firstElementChild.textContent='PLAY');});
+if(!reduced&&matchMedia('(hover:hover) and (pointer:fine)').matches){const cursor=document.createElement('span');cursor.className='play-cursor';cursor.textContent='PLAY';cursor.setAttribute('aria-hidden','true');document.body.append(cursor);document.querySelectorAll('.listen-zone .poster,.preview-play').forEach(el=>{el.addEventListener('pointerenter',()=>cursor.classList.add('on'));el.addEventListener('pointerleave',()=>cursor.classList.remove('on'));el.addEventListener('pointermove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});});}
+})();
+
+(()=>{
+const API='https://script.google.com/macros/s/AKfycby08szHstuT7JYxyRSol6xAzd7VcwcffgbQjrkmHVElP4BqDJo8y1i4xDpv8t6qFYk5/exec';
+function jsonp(action){return new Promise((resolve,reject)=>{const cb='feed'+Math.random().toString(36).slice(2),script=document.createElement('script');let done=false;const finish=(err,data)=>{if(done)return;done=true;clearTimeout(timer);script.remove();delete window[cb];err?reject(err):resolve(data);};const timer=setTimeout(()=>finish(Error('timeout')),12000);window[cb]=data=>finish(null,data);script.onerror=()=>finish(Error('network'));script.src=API+'?action='+encodeURIComponent(action)+'&callback='+cb;document.head.append(script);});}
+async function get(action){try{const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);try{const r=await fetch(API+'?action='+action,{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('network');return await r.json();}finally{clearTimeout(timer);}}catch(_){return jsonp(action);}}
+function note(node,text){node.replaceChildren();const p=document.createElement('p');p.className='empty-note';p.textContent=text;node.append(p);}
+function link(parent,label,href){if(!/^https?:\/\//i.test(href||''))return;try{const url=new URL(href);if(!['https:','http:'].includes(url.protocol))return;const a=document.createElement('a');a.href=url.href;a.textContent=label;a.rel='noopener';a.target='_blank';parent.append(a);}catch(_){}}
+document.querySelectorAll('.news-feed').forEach(async node=>{try{const data=await get('news');if(!data.ok||!Array.isArray(data.news))throw Error('response');const limit=Number(node.dataset.newsLimit),items=limit?data.news.slice(0,limit):data.news;node.replaceChildren();if(!items.length){note(node,'お知らせはまだありません');return;}const list=document.createElement('ul');list.className='news-list';items.forEach(item=>{const li=document.createElement('li');li.className='news-item';const date=document.createElement('time');date.dateTime=item.date;date.textContent=String(item.date||'').replaceAll('-','.');const title=document.createElement('h3');title.textContent=item.title;li.append(date,title);if(!limit){const body=document.createElement('p');body.textContent=item.body;li.append(body);}link(li,'詳しく見る ↗',item.link);list.append(li);});node.append(list);}catch(_){note(node,'お知らせを読み込めませんでした。時間をおいて、もう一度ご覧ください。');}});
+const next=document.getElementById('next-show'),section=document.getElementById('next-live');if(next){section.hidden=true;get('shows').then(data=>{if(!data.ok||!Array.isArray(data.shows)||!data.shows.length)return;const item=data.shows[0],row=document.createElement('div');row.className='next-show';const date=document.createElement('time');date.dateTime=item.date;date.textContent=item.date.replaceAll('-','.');const title=document.createElement('h3');title.textContent=item.title;const venue=document.createElement('p');venue.textContent=item.venue;const a=document.createElement('a');a.href='live.html';a.textContent='ライブと予約へ ↗';row.append(date,title,venue,a);next.append(row);section.hidden=false;}).catch(()=>{section.hidden=false;note(next,'ライブ情報を読み込めませんでした。');const a=document.createElement('a');a.href='live.html';a.className='news-more';a.textContent='LIVEページへ';next.append(a);});}
+})();
+
+</script></body></html>

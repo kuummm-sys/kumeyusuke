@@ -9,7 +9,7 @@
 <meta property="og:description" content="バンドの音、BGM、ゲーム音楽をつくる。楽曲提供・編曲の相談を受け付けています。">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23e2e4e0'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23111'%3Eく%3C/text%3E%3C/svg%3E">
-<title>DISCOGRAPHY｜くめゆうすけ</title>
+<title>ADMIN｜くめゆうすけ</title>
 <meta name="color-scheme" content="light">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -313,122 +313,6 @@
   .colo .dc{display:inline-block;margin-top:9px;border:1px solid var(--line);padding:3px 10px;border-radius:20px}
 
 
-  :root{
-    --paper:#EFF1EC;
-    --paper-2:#F8F9F5;
-    --ink:#16171B;
-    --ink-dim:#54555A;
-    --ink-faint:#909189;
-    --line:#D6D8CE;
-    --line-2:#E4E6DC;
-    --blue:#2743C7;
-    --red:#E23A22;
-
-    --round:"Zen Maru Gothic","Zen Kaku Gothic New",system-ui,sans-serif;
-    --grot:"Space Grotesk","Zen Kaku Gothic New",system-ui,sans-serif;
-    --serif:"Newsreader",Georgia,serif;
-    --sans:"Zen Kaku Gothic New",system-ui,-apple-system,sans-serif;
-    --mono:"Space Mono",ui-monospace,Menlo,monospace;
-
-    --wrap:1240px;
-    --pad:clamp(20px,5vw,80px);
-    --ease:cubic-bezier(.2,.8,.3,1);
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-  body{
-    margin:0;background:var(--paper);color:var(--ink);
-    font-family:var(--sans);font-weight:400;line-height:1.95;font-size:16px;letter-spacing:.014em;
-    -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  }
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
-
-  #hdr{position:sticky;top:0;z-index:40;background:rgba(239,241,236,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-  .nav{display:flex;align-items:center;gap:22px;height:64px;max-width:var(--wrap);margin:0 auto;padding-inline:var(--pad)}
-  .nav .mk{margin-right:auto;line-height:1.05}
-  .nav .mk b{font-family:var(--round);font-weight:700;font-size:1.06rem;letter-spacing:.04em}
-  .nav .mk i{display:block;font-family:var(--serif);font-style:italic;font-size:.7rem;letter-spacing:.05em;color:var(--ink-faint);margin-top:3px}
-  .nav a.lnk{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);transition:opacity .16s}
-  .nav a.lnk:hover{opacity:.55}
-  .nav a.contact{font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;border:1.4px solid var(--blue);color:var(--blue);padding:9px 16px;border-radius:22px;transition:.16s}
-  .nav a.contact:hover{background:var(--blue);color:#fff}
-  @media(max-width:860px){.nav a.lnk:not(.live){display:none}}
-  @media(max-width:600px){.nav{gap:10px}.nav .mk i{display:none}.nav a.contact{padding:7px 10px}.nav a.live{font-size:.6rem}}
-
-  .page-head{padding:clamp(64px,10vw,100px) 0 clamp(30px,5vw,40px)}
-  .back{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);transition:.16s}
-  .back:hover{color:var(--blue)}
-  .page-head h1{font-family:var(--round);font-weight:700;font-size:clamp(2.1rem,6vw,3.4rem);margin:22px 0 14px;letter-spacing:.03em}
-  .page-head p{margin:0;color:var(--ink-dim);font-size:.98rem;max-width:640px}
-
-  section.block{padding:clamp(50px,7vw,80px) 0}
-  .sh{position:relative;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:baseline;margin-bottom:clamp(34px,5vw,50px)}
-  .sh .no{font-family:var(--serif);font-style:italic;font-size:1.25rem;color:var(--blue)}
-  .sh :is(h1,h2){font-family:var(--round);font-weight:700;font-size:clamp(1.5rem,4vw,2.1rem);margin:0;line-height:1.24;letter-spacing:.04em}
-
-  .act-head{margin-bottom:22px}
-  .act-head h3{font-family:var(--round);font-weight:700;font-size:clamp(1.3rem,3vw,1.75rem);margin:0;letter-spacing:.03em}
-  .act-head .meta{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;color:var(--ink-faint);margin:8px 0 0;text-transform:uppercase}
-  .act-head p{margin:10px 0 0;color:var(--ink-dim);font-size:.92rem;line-height:1.9;max-width:560px}
-  .act-head .act-link{display:inline-block;margin-top:12px;margin-right:22px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border-bottom:1.4px solid transparent;transition:.16s}
-  .release-head .act-link{margin-right:18px}
-  .act-head .act-link:hover{border-color:var(--blue)}
-
-  .grp{font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint);margin:6px 0 18px}
-
-  .vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
-  .vids.two{grid-template-columns:repeat(2,1fr);max-width:640px}
-  @media(max-width:900px){.vids{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.vids{grid-template-columns:1fr}.vids.two{grid-template-columns:1fr}}
-
-  .vid .box{position:relative;aspect-ratio:16/9;width:100%;border-radius:6px;overflow:hidden;background:linear-gradient(155deg,#2a2b31,var(--ink))}
-  .vid .poster{position:absolute;inset:0;width:100%;height:100%;border:0;cursor:pointer;color:#fff;text-align:left;background:none;display:flex;flex-direction:column;justify-content:space-between;padding:14px 16px;font-family:inherit}
-  .vid .poster .ptop{font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-  .vid .poster .ptop.credit{line-height:1.7;color:rgba(255,255,255,.78)}
-  .vid .poster .pbot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
-  .vid .poster .ttl{font-family:var(--round);font-weight:700;font-size:1.02rem;line-height:1.4;letter-spacing:.02em}
-  .vid .poster .play{flex:none;width:40px;height:40px;border:1.4px solid rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;font-size:.64rem;transition:.2s}
-  .vid .poster:hover .play{border-color:var(--red);background:var(--red);transform:scale(1.1) rotate(8deg)}
-  .vid .ft{display:flex;justify-content:space-between;align-items:center;padding:11px 15px;background:var(--ink);border-radius:0 0 6px 6px}
-  .vid .ft .n{font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,.45)}
-  .vid .ft .n.credit{line-height:1.6;color:rgba(255,255,255,.72)}
-  .vid .ft a{font-family:var(--mono);font-size:.6rem;color:rgba(255,255,255,.8);transition:.16s}
-  .vid .ft a:hover{color:#fff}
-
-  .note{margin-top:26px;padding:14px 18px;border:1px solid var(--line);border-radius:8px;background:var(--paper-2);font-size:.82rem;color:var(--ink-dim);line-height:1.9}
-
-  .streams{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:14px}
-  .streams a{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);border-bottom:1.4px solid transparent;transition:.16s}
-  .streams a:hover{border-color:var(--blue)}
-
-  .tracks{margin:22px 0 0;padding:0;list-style:none;max-width:520px;border-top:1px solid var(--line)}
-  .tracks li{display:flex;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid var(--line-2);font-size:.86rem}
-  .tracks .tn{font-family:var(--mono);font-size:.68rem;color:var(--ink-faint);flex:none;width:1.4em}
-  .tracks .tt{color:var(--ink)}
-
-  .release{margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
-  .release:first-of-type{margin-top:28px}
-  .release-head h4{font-family:var(--round);font-weight:700;font-size:1.15rem;margin:0;letter-spacing:.03em}
-  .release-head .meta{display:block;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--ink-faint);margin:8px 0 0;text-transform:uppercase}
-  .release-head .act-link{display:inline-block;margin-top:12px}
-  .release .tracks{margin-top:20px}
-  .release .vids{margin-top:20px}
-
-  .clist{margin:26px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
-  .clist li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-2)}
-  .clist .ct{font-family:var(--round);font-weight:700;font-size:1rem}
-  .clist .cd{font-size:.8rem;color:var(--ink-dim);text-align:right;line-height:1.7}
-
-  footer{padding-block:70px 46px;background:var(--paper-2);position:relative;overflow:hidden}
-  .foot2{display:flex;justify-content:space-between;flex-wrap:wrap;gap:34px}
-  .foot2 .mk b{font-family:var(--round);font-weight:700;font-size:1.75rem;letter-spacing:.04em}
-  .foot2 .mk i{display:block;font-family:var(--serif);font-style:italic;font-size:.75rem;color:var(--ink-faint);margin-top:7px}
-  .foot2 .sns{display:flex;flex-direction:column;gap:8px}
-  .foot2 .sns a{font-family:var(--mono);font-size:.72rem;color:var(--ink-dim);letter-spacing:.03em}
-  .foot2 .sns a:hover{color:var(--blue)}
-  .colo{margin-top:56px;font-family:var(--mono);font-size:.6rem;color:var(--ink-faint);letter-spacing:.04em;line-height:2}
-
 
 /* Page renewal: the original photo, round lettering and two inks stay. */
 [hidden]{display:none!important}.name-red{color:var(--red)!important}body>header#hdr{position:sticky;background:rgba(239,241,236,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}
@@ -447,6 +331,7 @@ body.home>header#hdr{position:absolute;background:transparent;border:0;backdrop-
 @media(max-width:1150px){.menu-toggle{display:flex;align-items:center;gap:10px;border:1px solid var(--blue);border-radius:25px;color:var(--blue);background:var(--paper);padding:8px 15px;font-family:var(--mono);font-size:.7rem;min-height:40px}.nav{justify-content:space-between}.nav #site-menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px var(--pad);grid-template-columns:repeat(2,1fr);gap:3px 24px;max-height:calc(100svh - 64px);overflow:auto}.nav #site-menu.open{display:grid}.home .nav #site-menu a.lnk{color:var(--blue)!important}.nav #site-menu a.lnk{font-size:.8rem}.nav .mk i{display:none}}
 @media(max-width:600px){.block{padding:48px 0}.page-title{padding-top:45px}.intro-links{grid-template-columns:1fr}.intro-links a:nth-child(odd){margin-right:0}.next-show{flex-direction:column;gap:8px}.sh .no{font-size:110px}.home-compact.block{padding:38px 0}.hero{min-height:100svh}.hero h1{font-size:clamp(2.65rem,10vw,4.5rem)}}
 @media(prefers-reduced-motion:reduce){.string-intro,.play-cursor{display:none!important}.sh .no{transform:none!important}.horizontal-track{scroll-behavior:auto!important}.sh :is(h1,h2) svg path{stroke-dashoffset:0!important}.listen-wave i{animation:none!important}.js .rv{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
+.admin-wrap{max-width:1050px}#admin-status{padding:12px 0;color:var(--blue);overflow-wrap:anywhere}.admin-form{margin:28px 0;padding:25px 0;border-top:1px solid var(--line)}.admin-form h2,.admin-wrap h2{font-family:var(--round);color:var(--blue)}.admin-fields{display:grid;grid-template-columns:1fr 1fr;gap:20px}.admin-fields .full{grid-column:1/-1}.admin-wrap label{display:block;font-size:.85rem}.admin-wrap input,.admin-wrap textarea,.admin-wrap select{display:block;width:100%;margin:7px 0 15px;padding:12px;border:1px solid var(--line);border-radius:4px;background:var(--paper-2);color:var(--ink);font:inherit;min-width:0}.admin-wrap input[readonly]{background:var(--line-2)}.admin-wrap button{border:1px solid var(--blue);border-radius:22px;padding:10px 18px;background:transparent;color:var(--blue);font:inherit;font-size:.82rem;cursor:pointer;min-height:42px}.admin-wrap button:disabled{opacity:.45;cursor:wait}.admin-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.admin-actions span{font-size:.72rem;color:var(--ink-dim)}.admin-tabs{display:flex;gap:24px;flex-wrap:wrap;border-block:1px solid var(--line);padding:18px 0;margin:28px 0}.admin-tabs a{font-family:var(--mono);color:var(--blue);font-size:.8rem}#admin-panel>section{padding:24px 0;scroll-margin-top:85px}.admin-row{padding:15px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;align-items:center;justify-content:space-between}.admin-row p{font-size:.82rem;overflow-wrap:anywhere}.admin-row b{display:block;font-family:var(--round)}.admin-table-wrap{overflow-x:auto;margin:20px 0}.admin-table{width:100%;min-width:500px;border-collapse:collapse;text-align:left;font-size:.8rem}.admin-table th,.admin-table td{padding:12px;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.admin-table th{color:var(--blue);font-weight:500}.admin-table caption{text-align:left;padding:12px 0;color:var(--blue)}.admin-table td:nth-child(3){max-width:220px}.admin-table button{white-space:nowrap}.admin-bridge{position:absolute;width:1px;height:1px;border:0;clip-path:inset(100%);pointer-events:none}#login-panel{max-width:540px}@media(max-width:600px){.admin-fields{grid-template-columns:1fr}.admin-fields .full{grid-column:auto}.admin-row{align-items:start}.admin-tabs{gap:16px}.admin-tabs a{font-size:.7rem}}
 
 /* Keep reading content visible; motion belongs to strings and heading strokes. */
 .js .rv,.js .rv.in{opacity:1;transform:none;transition:none}.horizontal-track>.act{display:block}.horizontal-track>.act .vids{width:100%;max-width:none}.horizontal-track>.act .act-head{display:block}
@@ -455,170 +340,23 @@ body.home>header#hdr{position:absolute;background:transparent;border:0;backdrop-
 .wrap.page-title,.wrap.page-head{padding-inline:var(--pad)}
 
 body.home>header#hdr{position:fixed}body.home>header#hdr.solid{background:rgba(239,241,236,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(8px)}.home header.solid .nav a.lnk{color:var(--blue)!important}.home header.solid .nav .mk b{color:var(--ink)!important}.home header.solid .nav .mk i{color:var(--ink-dim)!important}
-</style></head><body><a class="skip-link" href="#main">本文へ</a><header id="hdr"><div class="nav"><a class="mk" href="index.html"><b>くめゆう<span class="name-red">す</span>け</b><i>Yusuke Kume — Guitarist &amp; Composer</i></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">MENU <span aria-hidden="true">＋</span></button><nav id="site-menu" aria-label="メインメニュー"><a class="lnk" href="index.html">HOME</a><a class="lnk" href="about.html">ABOUT</a><a class="lnk" href="band.html">BAND</a><a class="lnk" href="discography.html">DISCOGRAPHY</a><a class="lnk" href="listen.html">LISTEN</a><a class="lnk" href="subscribe.html">SUBSCRIBE</a><a class="lnk" href="live.html">LIVE</a><a class="lnk" href="news.html">NEWS</a><a class="lnk" href="request.html">REQUEST</a><a class="lnk" href="request.html#contact">CONTACT</a></nav></div></header><main id="main">
-  <div class="wrap page-head">
-    <a class="back" href="index.html">&larr; くめゆうすけ</a>
-    <h1>DISCOGRAPHY</h1>
-  </div>
-
-  <section class="block" id="pam">
-    <div class="wrap">
-      <div class="sh"><span class="no" aria-hidden="true">01</span><h2>PAM</h2></div>
-      <div class="act-head">
-        <h3>PAM</h3>
-        <p>高橋宏貴（ELLEGARDEN / THE PREDATORS）とのインストデュオ。キャッチーでテクニカルな楽曲を独自の空気感で聴かせる。</p>
-        <a class="act-link" href="http://pam-band.com/" target="_blank" rel="noopener">PAM 公式サイト ↗</a>
-        <a class="act-link" href="http://pam-band.com/disks/" target="_blank" rel="noopener">全リリース情報（購入・配信）↗</a>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>LIFE IS</h4>
-          <span class="meta">2024.10.02 ／ Single</span>
-          <a class="act-link" href="https://open.spotify.com/album/0mUnUTfTVYMjHQcr8EOJod" target="_blank" rel="noopener">Spotify ↗</a>
-          <a class="act-link" href="https://music.apple.com/jp/album/life-is-single/1766709294" target="_blank" rel="noopener">Apple Music ↗</a>
-        </div>
-        <div class="vids two">
-          <div class="vid">
-            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Life is</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/pPcUXt4CIS0" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>TWO SIDES OF THE SAME COIN</h4>
-          <span class="meta">2021.09.15 ／ EP ／ Understanding Label</span>
-          <a class="act-link" href="https://linkco.re/vEUGmZSs?lang=ja" target="_blank" rel="noopener">配信・購入リンクまとめ ↗</a>
-        </div>
-        <ol class="tracks">
-          <li><span class="tn">01</span><span class="tt">Moon Light</span></li>
-          <li><span class="tn">02</span><span class="tt">Two Sides Of The Same Coin</span></li>
-          <li><span class="tn">03</span><span class="tt">Another World</span></li>
-          <li><span class="tn">04</span><span class="tt">A Sunny Day</span></li>
-          <li><span class="tn">05</span><span class="tt">Rainys</span></li>
-        </ol>
-        <div class="vids two">
-          <div class="vid">
-            <div class="box"><button class="poster"><span class="ptop">PAM · Music Video</span><span class="pbot"><span class="ttl">Two Sides Of<br>The Same Coin</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">PAM</span><a href="https://youtu.be/K7poSbhAvEE" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>Worth Trying</h4>
-          <span class="meta">2020.05.20 ／ Album ／ Understanding Label</span>
-          <a class="act-link" href="https://open.spotify.com/album/3EUGjcGVMFjGPIEnQOBgAP" target="_blank" rel="noopener">Spotify ↗</a>
-          <a class="act-link" href="https://music.apple.com/jp/album/worh-trying/1519745024" target="_blank" rel="noopener">Apple Music ↗</a>
-          <a class="act-link" href="https://tower.jp/item/5039133/Worth-Trying" target="_blank" rel="noopener">タワーレコード ↗</a>
-        </div>
-        <ol class="tracks">
-          <li><span class="tn">01</span><span class="tt">Never Fast</span></li>
-          <li><span class="tn">02</span><span class="tt">Tough Night</span></li>
-          <li><span class="tn">03</span><span class="tt">Worth Trying</span></li>
-          <li><span class="tn">04</span><span class="tt">Resurrection</span></li>
-          <li><span class="tn">05</span><span class="tt">Bruise Of Memorie</span></li>
-          <li><span class="tn">06</span><span class="tt">Slow Blinker</span></li>
-          <li><span class="tn">07</span><span class="tt">Quaternity</span></li>
-          <li><span class="tn">08</span><span class="tt">Embrace The Crazy</span></li>
-          <li><span class="tn">09</span><span class="tt">Deeper</span></li>
-          <li><span class="tn">10</span><span class="tt">The Wanderer</span></li>
-        </ol>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>How have you lived?</h4>
-          <span class="meta">2019.09.04 ／ 1st Album ／ UNIVERSAL MUSIC JAPAN ／ 作曲：久米優佑（全曲）</span>
-          <a class="act-link" href="https://open.spotify.com/album/48ZhonwiHOM0krmqyD4HNx" target="_blank" rel="noopener">Spotify ↗</a>
-          <a class="act-link" href="https://music.apple.com/jp/album/how-have-you-lived/1487577443" target="_blank" rel="noopener">Apple Music ↗</a>
-          <a class="act-link" href="https://tower.jp/item/4936370/How-have-you-lived--" target="_blank" rel="noopener">タワーレコード ↗</a>
-        </div>
-        <ol class="tracks">
-          <li><span class="tn">01</span><span class="tt">Do-Chi-Touch</span></li>
-          <li><span class="tn">02</span><span class="tt">Dimension</span></li>
-          <li><span class="tn">03</span><span class="tt">Friday's Messenger</span></li>
-          <li><span class="tn">04</span><span class="tt">Sunpiazza</span></li>
-          <li><span class="tn">05</span><span class="tt">Like A Fresh</span></li>
-          <li><span class="tn">06</span><span class="tt">Speak Of The Devil</span></li>
-          <li><span class="tn">07</span><span class="tt">K's Blow</span></li>
-          <li><span class="tn">08</span><span class="tt">Mirage</span></li>
-          <li><span class="tn">09</span><span class="tt">Stunning</span></li>
-          <li><span class="tn">10</span><span class="tt">Ray ～How have you lived?～</span></li>
-        </ol>
-      </div>
-
-      <ul class="clist">
-        <li><span class="ct">A New Door</span><span class="cd">PAM 楽曲・作曲：久米優佑<br>株式会社リサイドワン テレビCM 起用曲（2024.12–2026.1 放送）</span></li>
-        <li><span class="ct">THE INSIDER</span><span class="cd">2人組音楽ユニット TENSONG との共同制作楽曲（2024.9 発表）</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="block" id="tricondor">
-    <div class="wrap">
-      <div class="sh"><span class="no" aria-hidden="true">02</span><h2>トリコンドル</h2></div>
-      <div class="act-head">
-        <h3>tricondor</h3>
-        <p>札幌発、3ピースの変拍子ファンクバンド。打ち込みを使わない圧倒的な音圧が持ち味。ギター：久米優佑。</p>
-        <a class="act-link" href="https://tricondor.net" target="_blank" rel="noopener">tricondor.net ↗</a>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>Human control</h4>
-          <span class="meta">2021.09.15 ／ 全国流通盤</span>
-          <a class="act-link" href="https://open.spotify.com/album/7r72zoVtpikfYy2iexyKKT" target="_blank" rel="noopener">Spotify ↗</a>
-          <a class="act-link" href="https://music.apple.com/jp/album/human-control-single/1584452000" target="_blank" rel="noopener">Apple Music ↗</a>
-          <a class="act-link" href="https://tower.jp/item/5238873/Human-control" target="_blank" rel="noopener">タワーレコード ↗</a>
-        </div>
-        <div class="vids two">
-          <div class="vid">
-            <div class="box"><button class="poster"><span class="ptop">tricondor · Music Video</span><span class="pbot"><span class="ttl">Kick Envy</span><span class="play">▶</span></span></button></div>
-            <div class="ft"><span class="n">トリコンドル</span><a href="https://www.youtube.com/watch?v=ygzUimxqG0Q" target="_blank" rel="noopener">YouTube ↗</a></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>POLICE MAN-HOLE</h4>
-          <span class="meta">2016.03.20</span>
-          <a class="act-link" href="http://www.flakerecords.com/rcminfo.php?CODE=29020" target="_blank" rel="noopener">FLAKE RECORDS ↗</a>
-        </div>
-      </div>
-
-      <div class="release">
-        <div class="release-head">
-          <h4>TRICO DELUXE</h4>
-          <span class="meta">2015.03.15 ／ SOLD OUT</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="original-songs">
-    <div class="wrap">
-      <div class="sh"><span class="no" aria-hidden="true">03</span><h2>ORIGINAL SONGS</h2></div>
-      <div class="vids">
-        <div class="vid">
-          <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">プリベイラー</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/wa-nk9Tjiis" target="_blank" rel="noopener">YouTube ↗</a></div>
-        </div>
-        <div class="vid">
-          <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">仮想王様</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/-jNYaVf505Y" target="_blank" rel="noopener">YouTube ↗</a></div>
-        </div>
-        <div class="vid">
-          <div class="box"><button class="poster"><span class="ptop credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><span class="pbot"><span class="ttl">会いたい屋</span><span class="play">▶</span></span></button></div>
-          <div class="ft"><span class="n credit">歌：宮舞モカ<br>作詞作曲・編曲：くめゆうすけ</span><a href="https://youtu.be/5v8iyAh-rEc" target="_blank" rel="noopener">YouTube ↗</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
+</style></head><body><a class="skip-link" href="#main">本文へ</a><header id="hdr"><div class="nav"><a class="mk" href="index.html"><b>くめゆう<span class="name-red">す</span>け</b><i>Yusuke Kume — Guitarist &amp; Composer</i></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">MENU <span aria-hidden="true">＋</span></button><nav id="site-menu" aria-label="メインメニュー"><a class="lnk" href="index.html">HOME</a><a class="lnk" href="about.html">ABOUT</a><a class="lnk" href="band.html">BAND</a><a class="lnk" href="discography.html">DISCOGRAPHY</a><a class="lnk" href="listen.html">LISTEN</a><a class="lnk" href="subscribe.html">SUBSCRIBE</a><a class="lnk" href="live.html">LIVE</a><a class="lnk" href="news.html">NEWS</a><a class="lnk" href="request.html">REQUEST</a><a class="lnk" href="request.html#contact">CONTACT</a></nav></div></header><main id="main"><div class="wrap page-title"><h1>ADMIN</h1><p>お知らせとライブの管理。</p></div>
+<section class="block"><div class="wrap admin-wrap">
+<p id="admin-status" role="status" aria-live="polite">接続を確認しています…</p>
+<div id="login-panel">
+<form id="code-request" class="admin-form"><h2>LOGIN</h2><label for="login-email">メールアドレス</label><input id="login-email" type="email" autocomplete="email" required maxlength="254"><button type="submit" disabled>確認コードを送る</button><p class="rnote">登録したメールアドレスに確認コードを送ります。</p></form>
+<form id="code-verify" class="admin-form" hidden><label for="login-code">確認コード</label><input id="login-code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required><button type="submit">ログインする</button><p class="rnote">コードの有効期限は5分です。</p></form>
+</div>
+<div id="admin-panel" hidden>
+<div class="admin-actions"><button id="admin-refresh" type="button">再読み込み</button><button id="admin-logout" type="button">ログアウト</button><span>1時間でログアウトします</span></div>
+<nav class="admin-tabs" aria-label="管理項目"><a href="#manage-news">NEWS</a><a href="#manage-shows">LIVE</a><a href="#manage-bookings">RESERVATIONS</a></nav>
+<section id="manage-news"><h2>NEWS</h2><p class="rnote">公開にすると、HOMEとNEWSページに表示されます。</p><div id="admin-news"></div>
+<form id="news-edit" class="admin-form"><h3 id="news-edit-title">お知らせを追加</h3><input type="hidden" name="id"><input type="hidden" name="revision"><div class="admin-fields"><label>日付<input name="date" type="date" required></label><label>タイトル<input name="title" maxlength="200" required></label><label class="full">本文<textarea name="body" maxlength="5000" rows="5"></textarea></label><label class="full">リンク（任意）<input name="link" type="url" maxlength="2000" placeholder="https://"></label><label>公開状態<select name="published"><option value="非公開">非公開</option><option value="公開">公開</option></select></label></div><div class="admin-actions"><button type="submit">お知らせを保存</button><button type="button" data-reset="news-edit">新規入力に戻す</button></div></form></section>
+<section id="manage-shows"><h2>LIVE</h2><div id="admin-shows"></div>
+<form id="show-edit" class="admin-form"><h3 id="show-edit-title">公演を追加</h3><input type="hidden" name="revision"><div class="admin-fields">
+<label>公演ID<input name="id" required maxlength="80" pattern="[A-Za-z0-9_-]+" placeholder="例：LIVE-20261004"></label><label>日付<input name="date" type="date" required></label><label>公演名<input name="title" required maxlength="200"></label><label>会場<input name="venue" required maxlength="200"></label><label class="full">出演<input name="performers" maxlength="500"></label><label>OPEN<input name="open" type="time"></label><label>START<input name="start" type="time"></label><label>前売<input name="advance" maxlength="100"></label><label>当日<input name="door" maxlength="100"></label><label>ドリンク代<input name="drink" maxlength="100"></label><label>定員<input name="capacity" type="number" min="1" max="100000" required></label><label>受付開始日時<input name="opensAt" type="datetime-local" required></label><label>受付終了日時<input name="closesAt" type="datetime-local" required></label><label>受付状態<select name="manualStatus"><option value="">通常受付（枠数から判定）</option><option value="終了">受付終了</option></select></label><label class="full">備考<textarea name="note" rows="3" maxlength="1000"></textarea></label></div><p class="rnote">日時は日本時間です。編集した公演のIDは変えられません。</p><div class="admin-actions"><button type="submit">公演を保存</button><button type="button" data-reset="show-edit">新規入力に戻す</button></div></form></section>
+<section id="manage-bookings"><h2>RESERVATIONS</h2><label for="booking-show">公演</label><select id="booking-show"><option value="">選んでください</option></select><button id="hold-view" type="button">取り置きリストを見る</button><div id="admin-bookings"></div><div id="admin-hold" hidden></div></section>
+</div></div></section>
 </main><footer>
   <div class="wrap">
     <div class="foot2">
@@ -776,4 +514,43 @@ document.querySelectorAll('.bgm-card audio').forEach(audio=>{const btn=document.
 if(!reduced&&matchMedia('(hover:hover) and (pointer:fine)').matches){const cursor=document.createElement('span');cursor.className='play-cursor';cursor.textContent='PLAY';cursor.setAttribute('aria-hidden','true');document.body.append(cursor);document.querySelectorAll('.listen-zone .poster,.preview-play').forEach(el=>{el.addEventListener('pointerenter',()=>cursor.classList.add('on'));el.addEventListener('pointerleave',()=>cursor.classList.remove('on'));el.addEventListener('pointermove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';});});}
 })();
 
+(()=>{
+'use strict';
+const API='https://script.google.com/macros/s/AKfycby08szHstuT7JYxyRSol6xAzd7VcwcffgbQjrkmHVElP4BqDJo8y1i4xDpv8t6qFYk5/exec';
+const status=document.getElementById('admin-status'),request=document.getElementById('code-request'),verify=document.getElementById('code-verify'),login=document.getElementById('login-panel'),panel=document.getElementById('admin-panel');
+const channel=crypto.randomUUID(),pending=new Map();let remote=null,remoteOrigin='',token='',challenge='',email='',data={news:[],shows:[],bookings:[]},expiry=0,logoutTimer;
+const iframe=document.createElement('iframe');iframe.title='管理画面の通信';iframe.className='admin-bridge';iframe.referrerPolicy='no-referrer';iframe.src=API+'?action=adminBridge&origin='+encodeURIComponent(location.origin)+'&channel='+channel;document.body.append(iframe);
+const connectionTimer=setTimeout(()=>{if(!remote)status.textContent='管理画面に接続できませんでした。時間をおいてページを再読み込みしてください。';},16000);
+function clearLogin(text){token='';challenge='';expiry=0;data={news:[],shows:[],bookings:[]};clearTimeout(logoutTimer);panel.hidden=true;login.hidden=false;document.getElementById('news-edit').reset();document.getElementById('show-edit').reset();verify.hidden=true;verify.reset();document.getElementById('admin-news').replaceChildren();document.getElementById('admin-shows').replaceChildren();document.getElementById('admin-bookings').replaceChildren();document.getElementById('admin-hold').replaceChildren();document.getElementById('admin-hold').hidden=true;status.textContent=text;}
+addEventListener('message',event=>{
+if(!/^https:\/\/(?:script|[a-z0-9-]+-script)\.googleusercontent\.com$/.test(event.origin))return;
+const message=event.data;if(!message||message.channel!==channel)return;
+if(message.type==='adminReady'&&!remote){remote=event.source;remoteOrigin=event.origin;clearTimeout(connectionTimer);request.querySelector('button').disabled=false;status.textContent='メールに届くコードでログインしてください。';return;}
+if(event.source!==remote||event.origin!==remoteOrigin||message.type!=='adminResult')return;
+const task=pending.get(message.id);if(!task)return;clearTimeout(task.timer);pending.delete(message.id);task.resolve(message.result);
+});
+function rpc(action,values={}){if(!remote)return Promise.reject(Error('接続できませんでした。ページを再読み込みしてください。'));return new Promise((resolve,reject)=>{const id=crypto.randomUUID(),timer=setTimeout(()=>{pending.delete(id);reject(Error('結果を確認できませんでした。再読み込みして内容を確認してください。'));},30000);pending.set(id,{resolve,reject,timer});remote.postMessage({type:'adminRequest',channel,id,input:{action,token,...values}},remoteOrigin);});}
+const errors={UNAUTHORIZED:'ログインの有効期限が切れました。もう一度ログインしてください。',DATE_HAS_BOOKINGS:'予約のある公演の日付は変えられません。別の公演として追加してください。',SETUP_REQUIRED:'管理用の設定がまだ完了していません。',INVALID_CODE:'コードが正しくないか、有効期限が切れています。',CONFLICT:'別の変更があります。再読み込みしてから編集してください。',INVALID_REQUEST:'入力内容を確認してください。',CAPACITY:'定員を予約済みの枚数より少なくすることはできません。',BUSY:'処理が混み合っています。少し待ってからお試しください。'};
+async function call(action,values){const result=await rpc(action,values);if(!result||!result.ok){if(result?.code==='UNAUTHORIZED')clearLogin(errors.UNAUTHORIZED);throw Error(errors[result?.code]||'処理できませんでした。少し待ってからお試しください。');}return result;}
+async function run(button,fn){button.disabled=true;try{await fn();}catch(e){status.textContent=e.message;}finally{button.disabled=false;}}
+request.onsubmit=e=>{e.preventDefault();if(!request.reportValidity())return;run(request.querySelector('button'),async()=>{email=document.getElementById('login-email').value.trim();const r=await call('requestCode',{email});challenge=r.challenge;verify.hidden=false;verify.reset();status.textContent='登録したアドレスなら確認コードを送りました。届くまで少しお待ちください。';document.getElementById('login-code').focus();});};
+verify.onsubmit=e=>{e.preventDefault();if(!verify.reportValidity())return;run(verify.querySelector('button'),async()=>{const r=await call('verifyCode',{email,challenge,code:document.getElementById('login-code').value});token=r.token;expiry=r.expiresAt;verify.reset();login.hidden=true;panel.hidden=false;logoutTimer=setTimeout(()=>{call('logout').catch(()=>{});clearLogin('ログインの有効期限が切れました。');},Math.max(0,expiry-Date.now()));await refresh();status.textContent='ログインしました。';});};
+function field(form,key,value){if(form.elements[key])form.elements[key].value=value??'';}
+function row(node,title,detail,edit){const article=document.createElement('div');article.className='admin-row';const p=document.createElement('p'),b=document.createElement('b');b.textContent=title;p.append(b,document.createTextNode(detail));const button=document.createElement('button');button.type='button';button.textContent='編集';button.onclick=edit;article.append(p,button);node.append(article);}
+function note(node,text){const p=document.createElement('p');p.className='empty-note';p.textContent=text;node.append(p);}
+function render(){
+const news=document.getElementById('admin-news');news.replaceChildren();if(!data.news.length)note(news,'お知らせはまだありません');data.news.forEach(item=>row(news,item.title,item.date+' ／ '+item.published,()=>{const form=document.getElementById('news-edit');Object.entries(item).forEach(([k,v])=>field(form,k,v));document.getElementById('news-edit-title').textContent='お知らせを編集';form.scrollIntoView({block:'start'});}));
+const shows=document.getElementById('admin-shows');shows.replaceChildren();if(!data.shows.length)note(shows,'公演はまだありません');data.shows.forEach(item=>row(shows,item.title,item.date+' ／ '+item.venue,()=>{const form=document.getElementById('show-edit');Object.entries(item).forEach(([k,v])=>field(form,k,v));field(form,'manualStatus',item.manualStatus==='終了'?'終了':'');form.elements.id.readOnly=true;document.getElementById('show-edit-title').textContent='公演を編集';form.scrollIntoView({block:'start'});}));
+const select=document.getElementById('booking-show'),selected=select.value;select.replaceChildren(new Option('選んでください',''));data.shows.forEach(item=>select.append(new Option(item.date+' '+item.title,item.id)));select.value=selected;renderBookings();}
+function table(node,caption,headers,rows){const wrap=document.createElement('div');wrap.className='admin-table-wrap';const table=document.createElement('table');table.className='admin-table';const cap=document.createElement('caption');cap.textContent=caption;table.append(cap);const tr=document.createElement('tr');headers.forEach(text=>{const th=document.createElement('th');th.scope='col';th.textContent=text;tr.append(th);});const thead=document.createElement('thead');thead.append(tr);table.append(thead);const body=document.createElement('tbody');rows.forEach(items=>{const tr=document.createElement('tr');items.forEach(item=>{const td=document.createElement('td');typeof item==='string'?td.textContent=item:td.append(item);tr.append(td);});body.append(tr);});table.append(body);wrap.append(table);node.append(wrap);}
+function renderBookings(){const node=document.getElementById('admin-bookings'),id=document.getElementById('booking-show').value;node.replaceChildren();document.getElementById('admin-hold').hidden=true;if(!id){note(node,'公演を選ぶと予約一覧が表示されます');return;}const bookings=data.bookings.filter(b=>b.showId===id);if(!bookings.length){note(node,'予約はまだありません');return;}table(node,'予約一覧',['予約番号','お名前・枚数','メール・メッセージ','状態','操作'],bookings.map(b=>{const button=document.createElement('button');button.type='button';button.textContent='キャンセル';button.disabled=b.state!=='予約';button.onclick=()=>{if(!confirm(b.number+' をキャンセルしますか？'))return;run(button,async()=>{await call('cancelReservation',{showId:b.showId,number:b.number,revision:b.revision});await refresh();status.textContent='予約をキャンセルしました。';});};return [b.number,b.name+' ／ '+b.quantity+'枚',b.email+(b.message?' ／ '+b.message:''),b.state,button];}));}
+async function refresh(){const r=await call('adminData');data=r.data;render();}
+document.getElementById('admin-refresh').onclick=e=>run(e.currentTarget,async()=>{await refresh();status.textContent='読み込みました。';});
+document.getElementById('admin-logout').onclick=e=>run(e.currentTarget,async()=>{await call('logout');clearLogin('ログアウトしました。');});
+document.getElementById('booking-show').onchange=renderBookings;
+document.getElementById('hold-view').onclick=e=>run(e.currentTarget,async()=>{const showId=document.getElementById('booking-show').value;if(!showId){status.textContent='公演を選んでください。';return;}const r=await call('holdList',{showId}),node=document.getElementById('admin-hold');node.replaceChildren();node.hidden=false;table(node,'取り置きリスト',['お名前','枚数','予約番号'],r.rows.map(row=>row.map(String)));status.textContent=r.rows.length+'件の取り置きリストを表示しました。';});
+for(const [formId,action,label]of[['news-edit','saveNews','お知らせ'],['show-edit','saveShow','公演']]){const form=document.getElementById(formId);form.onsubmit=e=>{e.preventDefault();if(!form.reportValidity())return;run(form.querySelector('[type=submit]'),async()=>{const item=Object.fromEntries(new FormData(form));await call(action,{item});form.reset();document.getElementById(formId+'-title').textContent=label+'を追加';form.elements.id.readOnly=false;field(form,'id','');field(form,'revision','');await refresh();status.textContent=label+'を保存しました。';});};}
+document.querySelectorAll('[data-reset]').forEach(btn=>btn.onclick=()=>{const form=document.getElementById(btn.dataset.reset);form.reset();field(form,'id','');field(form,'revision','');form.elements.id.readOnly=false;document.getElementById(btn.dataset.reset+'-title').textContent=btn.dataset.reset==='news-edit'?'お知らせを追加':'公演を追加';});
+addEventListener('pagehide',()=>{token='';pending.clear();});
+})();
 </script></body></html>
