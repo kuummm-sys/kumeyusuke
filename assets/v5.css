@@ -122,3 +122,73 @@ main .lede,main h1,main h2,main h3,main h4{color:inherit}
 .hero[data-media=v5] .lead{max-width:min(1150px,86vw)!important}
 .hero[data-media=v5] .scroll{display:none}
 .home #hdr:not(.solid) .menu-toggle{background:rgba(0,0,0,.28)!important;border-color:rgba(255,255,255,.8)!important;color:#fff!important}
+
+/* ===== 第5版 修正2（Owner 確認後） ===== */
+
+/* 下部の問い合わせ：説明つきの2枚のカード */
+.closing{border-top:0!important;margin-top:90px!important}
+.closing>.wrap{padding-block:0 30px!important}
+.v5-cta{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.v5-cta-card{all:unset;box-sizing:border-box;cursor:pointer;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:14px;padding:38px 40px 34px;border:2px solid var(--blue);background:var(--paper-2);color:var(--blue);font-family:var(--round);transition:color .35s,border-color .35s}
+.v5-cta-card:before{content:"";position:absolute;inset:0;background:var(--blue);transform:translateY(101%);transition:transform .5s cubic-bezier(.2,.8,.2,1);z-index:0}
+.v5-cta-card>*{position:relative;z-index:1}
+.v5-cta-card .k{font-size:.8rem;letter-spacing:.2em}
+.v5-cta-card b{font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.3;color:var(--ink)}
+.v5-cta-card .d{font-size:.95rem;line-height:1.8;color:var(--ink-dim);max-width:30em}
+.v5-cta-card .go{margin-top:6px;font-size:1.05rem;display:inline-flex;gap:12px;align-items:center}
+.v5-cta-card .go i{font-style:normal;transition:transform .4s}
+.v5-cta-card:hover,.v5-cta-card:focus-visible{color:#fff}
+.v5-cta-card:hover:before,.v5-cta-card:focus-visible:before{transform:none}
+.v5-cta-card:hover :is(b,.d),.v5-cta-card:focus-visible :is(b,.d){color:#fff}
+.v5-cta-card:hover .go i{transform:translateX(8px)}
+.v5-cta-card:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+.v5-cta-card.is-live{border-color:var(--red);color:var(--red)}
+.v5-cta-card.is-live:before{background:var(--red)}
+
+/* 流れる文字の帯 → 波の模様 */
+.v5-wavebar .ticker-track{display:none!important}
+.v5-wavebar{transform:none!important;margin:0!important}
+.v5-wavebar a{position:relative;height:30px;padding:0!important}
+.v5-wave{position:absolute;inset:0;display:block;overflow:hidden}
+.v5-wave i{position:absolute;left:0;right:0;top:50%;height:22px;margin-top:-11px;background-repeat:repeat-x;background-size:120px 22px;animation:v5-wave 6s linear infinite}
+.v5-wave i:nth-child(1){background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='22'><path d='M0 11 Q15 1 30 11 T60 11 T90 11 T120 11' fill='none' stroke='white' stroke-width='2'/></svg>")}
+.v5-wave i:nth-child(2){opacity:.45;animation-duration:9s;animation-delay:-1.2s;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='22'><path d='M0 11 Q15 4 30 11 T60 11 T90 11 T120 11' fill='none' stroke='white' stroke-width='1.5'/></svg>")}
+.v5-wave i:nth-child(3){opacity:.9;animation-duration:13s;animation-direction:reverse;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='22'><path d='M0 11 Q30 7 60 11 T120 11' fill='none' stroke='%23E23A22' stroke-width='1.5'/></svg>");background-size:240px 22px}
+@keyframes v5-wave{from{background-position-x:0}to{background-position-x:-240px}}
+
+/* DISCOGRAPHY：サブスクへの誘導 */
+.v5-sub-banner{display:grid;grid-template-columns:1.2fr 1fr auto;grid-template-areas:"k k k" "b d go" "b price go";gap:12px 40px;align-items:end;margin:10px 0 50px;padding:40px 44px;background:var(--blue);color:#fff!important;text-decoration:none!important;position:relative;overflow:hidden;transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.v5-sub-banner .k{grid-area:k;font-size:.8rem;letter-spacing:.22em;opacity:.8}
+.v5-sub-banner b{grid-area:b;font-size:clamp(1.6rem,2.8vw,2.6rem);line-height:1.3;color:#fff}
+.v5-sub-banner .d{grid-area:d;font-size:.95rem;line-height:1.8;color:#e8ebf8!important}
+.v5-sub-banner .price{grid-area:price;font-size:1.1rem;color:#fff}
+.v5-sub-banner .price em{font-style:normal;font-size:2.4rem;color:#fff;margin:0 4px}
+.v5-sub-banner .go{grid-area:go;align-self:center;display:inline-flex;gap:12px;padding:16px 26px;background:#fff;color:var(--blue);font-size:1.05rem;white-space:nowrap;transition:background .3s,color .3s}
+.v5-sub-banner:hover .go{background:var(--red);color:#fff}
+.v5-sub-banner:hover{transform:translateY(-4px)}
+.v5-sub-banner:after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:2px solid rgba(255,255,255,.18)}
+
+/* SUBSCRIBE：真ん中（青）のプランを読みやすく */
+.plan-deck>div:nth-child(2) :is(dd,dt,span,a,p){color:#fff!important}
+.plan-deck>div:nth-child(2) dt a{border-color:#fff}
+
+/* REQUEST：崩れていた並びを直す */
+.layout-request #req>.wrap>div:empty{display:none}
+.layout-request .req-intro{grid-column:2!important;margin:50px 0 10px;padding:0!important;text-align:left!important;transform:none!important}
+.layout-request .req-intro :is(h3,p,b,strong){text-align:left}
+.layout-request .req{grid-column:2!important}
+.layout-request .svc{margin:30px 0 0;padding:0}
+.layout-request .svc li{list-style:none;padding:16px 0 16px 28px;border-bottom:1px solid var(--line);position:relative}
+.layout-request .svc li:before{content:"";position:absolute;left:4px;top:50%;width:10px;height:10px;margin-top:-5px;border:2px solid var(--blue);border-radius:50%}
+.layout-request .cta .cbtn{all:unset;cursor:pointer;display:inline-block;margin-top:30px;padding:16px 28px;background:var(--blue);color:#fff;font-family:var(--round);font-size:1.05rem}
+.layout-request .cta .cbtn:hover{background:var(--red)}
+
+@media (max-width:760px){
+  .v5-cta{grid-template-columns:1fr}
+  .v5-cta-card{padding:28px 24px}
+  .v5-sub-banner{grid-template-columns:1fr;grid-template-areas:"k" "b" "d" "price" "go";padding:30px 24px}
+  .v5-sub-banner .go{justify-self:start}
+}
+@media (prefers-reduced-motion:reduce){.v5-wave i{animation:none}}
+.motion-paused .v5-wave i{animation-play-state:paused}
+.layout-request .req-intro>*{margin-left:0!important;margin-right:0!important;max-width:40em;text-align:left!important}

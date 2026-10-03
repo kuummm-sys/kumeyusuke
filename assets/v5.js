@@ -210,6 +210,16 @@
     });
   }
 
+
+  /* ---------- CONTACT のリンクは、そのページでパネルを開く ---------- */
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href$="#contact"]');
+    const btn = document.querySelector('[data-open-panel="contact"]');
+    if (!a || !btn) return;
+    e.preventDefault(); e.stopImmediatePropagation();
+    btn.click();
+  }, true);
+
   /* ---------- ページ移動の幕 ---------- */
   const curtain = document.createElement('div'); curtain.className = 'v5-curtain'; curtain.setAttribute('aria-hidden', 'true');
   document.body.appendChild(curtain);
