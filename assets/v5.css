@@ -223,3 +223,12 @@ main .lede,main h1,main h2,main h3,main h4{color:inherit}
 .v5-flyer:hover{transform:rotate(-1.5deg) scale(1.02)}
 .v5-flyer img{display:block;width:100%;height:auto}
 @media (max-width:600px){.show.has-flyer,.next-show.has-flyer{grid-template-columns:1fr}.show.has-flyer>.v5-flyer,.next-show.has-flyer>.v5-flyer{grid-row:auto;max-width:300px}}
+
+/* LIVE：各公演の予約ボタンを大きく */
+.layout-live .show-action{display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding-top:22px}
+.layout-live .show-action .reserve-link{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:14px 30px;background:var(--red);color:#fff;font-family:var(--round);font-size:1.1rem;font-weight:700;letter-spacing:.02em;transition:background .3s,transform .3s}
+.layout-live .show-action .reserve-link:hover{background:var(--blue);transform:translateY(-2px)}
+.layout-live .show-action .reserve-link:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+.layout-live .show-action .status{font-size:.9rem}
+.v5-cta.is-single{grid-template-columns:1fr;max-width:760px}
+@media (max-width:600px){.layout-live .show-action .reserve-link{width:100%}}
