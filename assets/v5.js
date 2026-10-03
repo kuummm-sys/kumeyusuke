@@ -239,6 +239,91 @@
   new MutationObserver(scanShows).observe(document.body, { childList: true, subtree: true });
   scanShows();
 
+
+  /* ---------- LIVE：カレンダー表示と「カレンダーに追加」（2026-10-03 Owner 決定） ---------- */
+  const showList = document.getElementById('shows');
+  if (showList && document.body.classList.contains('layout-live')) {
+    const W = ['日', '月', '火', '水', '木', '金', '土'];
+    const pad2 = n => String(n).padStart(2, '0');
+    const readShows = () => [...showList.querySelectorAll('article.show[data-show-id]')].map(el => {
+      const d = (el.querySelector('.show-date')?.firstChild?.textContent || '').trim().split('.');
+      const metas = [...el.querySelectorAll('.show-meta')].map(x => x.textContent);
+      const tm = (metas.find(x => /OPEN/.test(x)) || '').match(/OPEN\s*(\d{1,2}:\d{2}).*START\s*(\d{1,2}:\d{2})/);
+      return { el, id: el.dataset.showId, y: +d[0], m: +d[1], d: +d[2],
+        title: el.querySelector('h3')?.textContent || '', venue: el.querySelector('.show-venue')?.textContent || '',
+        open: tm ? tm[1] : '', start: tm ? tm[2] : '', detail: metas.join('\n') + '\n' + (el.querySelector('.show-note')?.textContent || '') };
+    }).filter(x => x.y && x.m && x.d);
+
+    /* ③ カレンダーに追加 */
+    const ics = x => {
+      const [sh, sm] = (x.start || '18:00').split(':').map(Number);
+      const st = `${x.y}${pad2(x.m)}${pad2(x.d)}T${pad2(sh)}${pad2(sm)}00`;
+      const en = `${x.y}${pad2(x.m)}${pad2(x.d)}T${pad2(Math.min(23, sh + 3))}${pad2(sm)}00`;
+      const esc = t => String(t).replace(/[\\,;]/g, m => '\\' + m).replace(/\n/g, '\\n');
+      const body = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//kumeyusuke//live//JA', 'BEGIN:VEVENT',
+        `UID:${x.id}@kumeyusuke.net`, `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').slice(0, 15)}Z`,
+        `DTSTART;TZID=Asia/Tokyo:${st}`, `DTEND;TZID=Asia/Tokyo:${en}`,
+        `SUMMARY:${esc(x.title)}`, `LOCATION:${esc(x.venue)}`, `DESCRIPTION:${esc(x.detail + '\nhttps://kumeyusuke.net/live.html')}`,
+        'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+      return { st, en, url: URL.createObjectURL(new Blob([body], { type: 'text/calendar' })) };
+    };
+    const addCalButtons = list => list.forEach(x => {
+      if (x.el.querySelector('.v5-addcal')) return;
+      const c = ics(x);
+      const g = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        + '&text=' + encodeURIComponent(x.title) + '&dates=' + c.st + '/' + c.en + '&ctz=Asia/Tokyo'
+        + '&location=' + encodeURIComponent(x.venue) + '&details=' + encodeURIComponent(x.detail + '\nhttps://kumeyusuke.net/live.html');
+      const box = document.createElement('div');
+      box.className = 'v5-addcal';
+      box.innerHTML = `<span>カレンダーに追加</span><a href="${g}" target="_blank" rel="noopener">Googleカレンダー</a><a href="${c.url}" download="${x.id}.ics">iPhone・その他</a>`;
+      (x.el.querySelector('.show-action') || x.el).appendChild(box);
+    });
+
+    /* ① 月のカレンダー */
+    const cal = document.createElement('div');
+    cal.className = 'v5-cal';
+    cal.setAttribute('aria-label', 'ライブのカレンダー');
+    showList.before(cal);
+    let view = null, moved = false;
+    const draw = list => {
+      if (!moved && list.length && view && !(view.y === list[0].y && view.m === list[0].m)) view = null;
+      if (!view) {
+        const f = list[0];
+        const now = new Date();
+        view = f ? { y: f.y, m: f.m } : { y: now.getFullYear(), m: now.getMonth() + 1 };
+      }
+      const first = new Date(view.y, view.m - 1, 1), days = new Date(view.y, view.m, 0).getDate();
+      const today = new Date();
+      const inMonth = list.filter(x => x.y === view.y && x.m === view.m);
+      let cells = '';
+      for (let i = 0; i < first.getDay(); i++) cells += '<div class="c empty"></div>';
+      for (let d = 1; d <= days; d++) {
+        const hits = inMonth.filter(x => x.d === d);
+        const wd = new Date(view.y, view.m - 1, d).getDay();
+        const isToday = today.getFullYear() === view.y && today.getMonth() + 1 === view.m && today.getDate() === d;
+        cells += hits.length
+          ? `<button type="button" class="c has${wd === 0 ? ' sun' : wd === 6 ? ' sat' : ''}${isToday ? ' today' : ''}" data-go="${hits[0].id}" aria-label="${view.m}月${d}日 ${hits.map(h => h.title).join('、')}"><b>${d}</b><img src="assets/live/${hits[0].id}.webp" alt="" loading="lazy" onerror="this.remove()"><i>${hits[0].venue}</i></button>`
+          : `<div class="c${wd === 0 ? ' sun' : wd === 6 ? ' sat' : ''}${isToday ? ' today' : ''}"><b>${d}</b></div>`;
+      }
+      cal.innerHTML = `<div class="cal-head"><button type="button" class="nav prev" aria-label="前の月">←</button>`
+        + `<h3>${view.y}.${pad2(view.m)}</h3><button type="button" class="nav next" aria-label="次の月">→</button></div>`
+        + `<div class="cal-week">${W.map((w, i) => `<span class="${i === 0 ? 'sun' : i === 6 ? 'sat' : ''}">${w}</span>`).join('')}</div>`
+        + `<div class="cal-grid">${cells}</div>`
+        + (inMonth.length ? '' : '<p class="cal-empty">この月のライブはありません</p>');
+      cal.querySelector('.prev').onclick = () => { moved = true; view.m--; if (view.m < 1) { view.m = 12; view.y--; } draw(readShows()); };
+      cal.querySelector('.next').onclick = () => { moved = true; view.m++; if (view.m > 12) { view.m = 1; view.y++; } draw(readShows()); };
+      cal.querySelectorAll('[data-go]').forEach(b => b.onclick = () => {
+        const t = showList.querySelector(`article.show[data-show-id="${b.dataset.go}"]`);
+        if (!t) return;
+        t.scrollIntoView({ behavior: still() ? 'auto' : 'smooth', block: 'center' });
+        t.classList.remove('v5-flash'); void t.offsetWidth; t.classList.add('v5-flash');
+      });
+    };
+    const refresh = () => { const list = readShows(); draw(list); addCalButtons(list); };
+    new MutationObserver(refresh).observe(showList, { childList: true });
+    refresh();
+  }
+
   /* ---------- CONTACT のリンクは、そのページでパネルを開く ---------- */
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href$="#contact"]');
