@@ -86,36 +86,57 @@
   .nav a.contact:hover{background:var(--blue);color:#fff}
   @media(max-width:860px){.nav a.lnk{display:none}}
 
-  /* ---------- photo hero ---------- */
-  .hero{position:relative;min-height:100svh;display:grid;place-items:center;overflow:hidden;background:#15171b;color:#fff;padding:104px var(--pad) 80px}
-  .hero-slides,.hero-slide,.hero-shade{position:absolute;inset:0}
-  .hero-slide{opacity:0;transition:opacity 1.4s ease}
-  .hero-slide.is-active{opacity:1}
-  .hero-slide picture{display:block;width:100%;height:100%}
-  .hero-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 40%}
-  .hero-slide:nth-child(2) img{filter:brightness(.58)}
-  .hero-slide:nth-child(5) img{filter:brightness(.75)}
-  .hero-slide:nth-child(7) img{filter:brightness(.85)}
-  .hero-shade{background:linear-gradient(90deg,rgba(10,12,23,.56),rgba(10,12,23,.34) 55%,rgba(10,12,23,.5)),linear-gradient(0deg,rgba(10,12,23,.3),transparent 35%)}
-  .hero .inner{position:relative;z-index:2;width:100%;max-width:var(--wrap);margin:auto;text-align:center}
-  .hero .lead{max-width:100%;margin:auto}
-  .hero h1{font-family:var(--grot);font-size:clamp(2.65rem,9.5vw,8rem);font-weight:700;line-height:1.04;letter-spacing:-.035em;margin:0;text-wrap:balance;text-shadow:0 3px 28px rgba(0,0,0,.26)}
+  /* ---------- sound-responsive hero prototype ---------- */
+  header:not(.solid){background:rgba(239,241,236,.92);backdrop-filter:blur(9px);border-bottom:1px solid var(--line-2)}
+  .hero{position:relative;display:grid;grid-template-columns:55% 45%;min-height:100svh;padding-top:64px;overflow:hidden;background:var(--paper);isolation:isolate}
+  .hero-copy{grid-column:1;grid-row:1;z-index:2;display:flex;flex-direction:column;justify-content:center;min-height:calc(100svh - 64px);padding:clamp(70px,10vh,130px) clamp(24px,5vw,80px) clamp(165px,22vh,240px);border-right:1px solid rgba(39,67,199,.18)}
+  .hero-kicker{font-family:var(--round);font-size:clamp(.82rem,1.2vw,.96rem);color:var(--blue);letter-spacing:.04em;margin-bottom:clamp(30px,5vh,55px)}
+  .hero h1{font-family:var(--grot);font-size:clamp(4.1rem,8.1vw,9.2rem);font-weight:700;line-height:.88;letter-spacing:-.075em;margin:0 0 clamp(30px,5vh,58px);white-space:nowrap}
+  .hero h1 span.name-line{display:block}
   .hero h1 .dot{color:var(--red)}
-  .hero .sub{font-family:var(--round);font-weight:500;font-size:clamp(1rem,2.2vw,1.5rem);line-height:1.5;letter-spacing:.015em;margin:22px auto 0;color:#fff;text-shadow:0 2px 18px rgba(0,0,0,.45)}
-  .hero-about{display:inline-flex;align-items:center;justify-content:center;min-width:150px;min-height:48px;margin-top:40px;padding:9px 30px;border:1.5px solid #fff;border-radius:999px;font-family:var(--grot);font-weight:700;font-size:.88rem;letter-spacing:.08em;color:#fff;transition:background .2s,color .2s}
-  .hero-about:hover{background:#fff;color:var(--ink)}
-  .hero .scroll{position:absolute;left:var(--pad);bottom:25px;z-index:3;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:rgba(255,255,255,.85)}
-  header:not(.solid) .nav .mk b,header:not(.solid) .nav a.lnk,header:not(.solid) .nav a.contact{color:#fff}
-  header:not(.solid) .nav .mk i{color:rgba(255,255,255,.76)}
-  header:not(.solid) .nav a.contact{border-color:#fff}
-  header:not(.solid) .nav a.contact:hover{background:#fff;color:var(--ink)}
-  @media(max-width:600px){
-    .hero{padding-top:112px;padding-bottom:80px}
-    .hero-slide img{object-position:center}
-    .hero h1{letter-spacing:-.05em}
-    .hero .sub{max-width:20em}
+  .hero .sub{font-family:var(--round);font-weight:500;font-size:clamp(1rem,1.6vw,1.34rem);line-height:1.6;max-width:27em;margin:0 0 clamp(36px,6vh,64px)}
+  .hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px 30px}
+  .hero-sound{display:inline-flex;align-items:center;gap:14px;min-height:56px;padding:0 25px 0 8px;border:1.5px solid var(--blue);border-radius:999px;background:var(--blue);color:#fff;font-family:var(--round);font-size:.94rem;font-weight:700;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+  .hero-sound:hover{background:#172b95;transform:translateY(-2px)}
+  .hero-sound .icon{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--blue);font-family:var(--sans);font-size:.8rem}
+  .hero-track{font-family:var(--sans);font-size:.76rem;line-height:1.55;color:var(--ink-dim)}
+  .hero-track strong{display:block;font-weight:700;color:var(--ink)}
+  .hero-more{display:inline-flex;align-items:center;gap:9px;width:max-content;margin-top:28px;font-size:.8rem;color:var(--blue);border-bottom:1px solid currentColor}
+  .hero-more:hover{color:var(--red)}
+  .hero-photo{grid-column:2;grid-row:1;position:relative;min-height:calc(100svh - 64px);overflow:hidden;background:#241d22}
+  .hero-photo picture,.hero-photo img{display:block;width:100%;height:100%}
+  .hero-photo img{object-fit:cover;object-position:58% center;filter:saturate(.88) contrast(1.04);transition:transform 18s linear,filter 1.2s ease}
+  .hero.is-playing .hero-photo img{transform:scale(1.075) translateX(-1.5%);filter:saturate(1.06) contrast(1.04)}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,23,27,.04),transparent 24%),linear-gradient(0deg,rgba(18,19,27,.24),transparent 40%);pointer-events:none}
+  .hero-photo-credit{position:absolute;right:clamp(20px,4vw,60px);bottom:34px;color:#fff;font-family:var(--mono);font-size:.59rem;letter-spacing:.04em;text-shadow:0 1px 8px #111;z-index:2}
+  .hero-strings-static,.hero-strings{position:absolute;inset:0;z-index:3;pointer-events:none}
+  .hero-strings-static{display:flex;flex-direction:column;justify-content:space-between;top:auto;bottom:9%;height:17%}
+  .hero-strings-static span{height:1px;width:100%;background:linear-gradient(90deg,rgba(39,67,199,.25) 0 55%,rgba(255,255,255,.58) 55% 100%)}
+  .hero.visual-ready .hero-strings-static{display:none}
+  .hero-strings{width:100%;height:100%;opacity:0}
+  .hero.visual-ready .hero-strings{opacity:1}
+  @media(max-width:900px){
+    .hero{grid-template-columns:52% 48%}
+    .hero-copy{padding-left:var(--pad);padding-right:20px}
+    .hero h1{font-size:clamp(3.7rem,8.4vw,7rem)}
+    .hero-strings-static span{background:linear-gradient(90deg,rgba(39,67,199,.25) 0 52%,rgba(255,255,255,.58) 52% 100%)}
   }
-  @media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
+  @media(max-width:700px){
+    .hero{display:flex;flex-direction:column;padding-top:64px;min-height:100svh}
+    .hero-photo{order:0;min-height:0;height:44svh;max-height:510px;flex:none}
+    .hero-photo img{object-position:center 38%}
+    .hero-copy{order:1;min-height:0;flex:1;padding:clamp(38px,6vh,60px) var(--pad) clamp(138px,17vh,180px);border-right:0}
+    .hero-kicker{margin-bottom:20px}
+    .hero h1{font-size:clamp(3.8rem,15vw,6rem);margin-bottom:23px}
+    .hero .sub{font-size:1rem;margin-bottom:28px}
+    .hero-actions{gap:13px 18px}
+    .hero-sound{min-height:51px;padding-right:20px}
+    .hero-strings-static{bottom:5%;height:10%}
+    .hero-strings-static span{background:rgba(39,67,199,.3)}
+    .hero-photo-credit{right:var(--pad);bottom:16px}
+  }
+  @media(max-width:370px){.hero h1{font-size:3.45rem}.hero-track{font-size:.7rem}}
+  @media(prefers-reduced-motion:reduce){.hero-photo img,.hero-sound{transition:none!important}.hero.is-playing .hero-photo img{transform:none;filter:none}}
 
   .cbtn{display:inline-flex;align-items:center;gap:13px;font-family:var(--mono);font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:6px 4px;transition:color .18s}
   .cbtn .ring{width:56px;height:56px;border-radius:50%;flex:none;display:grid;place-items:center;border:1.4px solid currentColor;font-size:1.15rem;transition:transform .3s var(--ease),background .18s,color .18s,border-color .18s}
@@ -322,28 +343,24 @@
 
 <main>
 
-  <section class="hero" id="top">
-    <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide is-active"><picture><source media="(max-width: 600px)" srcset="assets/hero-01-mobile.webp"><img src="assets/hero-01-desktop.webp" alt="" fetchpriority="high"></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-02-mobile.webp"><img data-src="assets/hero-02-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-03-mobile.webp"><img data-src="assets/hero-03-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-04-mobile.webp"><img data-src="assets/hero-04-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-05-mobile.webp"><img data-src="assets/hero-05-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-06-mobile.webp"><img data-src="assets/hero-06-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-07-mobile.webp"><img data-src="assets/hero-07-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-08-mobile.webp"><img data-src="assets/hero-08-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-09-mobile.webp"><img data-src="assets/hero-09-desktop.webp" alt=""></picture></div>
-      <div class="hero-slide"><picture><source media="(max-width: 600px)" data-srcset="assets/hero-10-mobile.webp"><img data-src="assets/hero-10-desktop.webp" alt=""></picture></div>
-    </div>
-    <div class="hero-shade" aria-hidden="true"></div>
-    <div class="inner">
-      <div class="lead">
-        <h1>Yusuke Kume<span class="dot">.</span></h1>
-        <p class="sub">Sound that stays after the last note.</p>
-        <a class="hero-about" href="#profile">ABOUT</a>
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="hero-kicker">ギターと、音の仕事。</p>
+      <h1 id="hero-title"><span class="name-line">Yusuke</span><span class="name-line">Kume<span class="dot">.</span></span></h1>
+      <p class="sub">Sound that stays after the last note.</p>
+      <div class="hero-actions">
+        <button class="hero-sound" id="hero-sound" type="button" aria-pressed="false" aria-label="雨のち晴れの試聴を再生"><span class="icon" aria-hidden="true">▶</span><span class="sound-label">音を聴く</span></button>
+        <span class="hero-track"><strong>雨のち晴れ</strong>18秒の試聴</span>
       </div>
+      <a class="hero-more" href="#profile">くめゆうすけについて <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="scroll" aria-hidden="true">SCROLL</div>
+    <div class="hero-photo" aria-hidden="true">
+      <picture><source media="(max-width: 700px)" srcset="assets/hero-01-mobile.webp"><img src="assets/hero-01-desktop.webp" alt="" fetchpriority="high"></picture>
+      <span class="hero-photo-credit">くめゆうすけ ／ live</span>
+    </div>
+    <div class="hero-strings-static" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    <canvas class="hero-strings" id="hero-strings" aria-hidden="true"></canvas>
+    <audio id="hero-audio" preload="none" src="bgm-preview/ame-nochi-hare.m4a"></audio>
   </section>
 
   <section class="block" id="profile">
@@ -757,44 +774,136 @@
     });
   }
 
-  /* Load one upcoming stage photo at a time, after the initial page load. */
-  var slides=[].slice.call(document.querySelectorAll('.hero-slide'));
-  if(!reduce && slides.length>1){
-    var slideIndex=0;
-    function preloadSlide(index){
-      if(index===0) return;
-      var slide=slides[index];
-      if(slide.dataset.state) return;
-      slide.dataset.state='loading';
-      var img=slide.querySelector('img');
-      var source=slide.querySelector('source');
-      img.addEventListener('load',function(){
-        var decoded=img.decode ? img.decode() : Promise.resolve();
-        decoded.catch(function(){}).then(function(){ slide.dataset.state='ready'; });
-      },{once:true});
-      img.addEventListener('error',function(){ slide.dataset.state='error'; },{once:true});
-      source.srcset=source.dataset.srcset;
-      img.src=img.dataset.src;
-    }
-    function advanceSlide(){
-      if(document.hidden) return;
-      var next=(slideIndex+1)%slides.length;
-      if(next!==0 && slides[next].dataset.state!=='ready'){
-        preloadSlide(next);
-        return;
-      }
-      slides[slideIndex].classList.remove('is-active');
-      slides[next].classList.add('is-active');
-      slideIndex=next;
-      preloadSlide((next+1)%slides.length);
-    }
-    function startSlides(){
-      preloadSlide(1);
-      setInterval(advanceSlide,5500);
-    }
-    if(document.readyState==='complete') startSlides();
-    else addEventListener('load',startSlides,{once:true});
+  /* Six strings respond to the music. No audio or animation starts by itself. */
+  var hero=document.querySelector('.hero');
+  var soundButton=document.getElementById('hero-sound');
+  var soundLabel=soundButton.querySelector('.sound-label');
+  var soundIcon=soundButton.querySelector('.icon');
+  var heroAudio=document.getElementById('hero-audio');
+  var strings=document.getElementById('hero-strings');
+  var pen=strings.getContext && strings.getContext('2d');
+  var audioContext=null,analyser=null,wave=null,freq=null;
+  var width=0,height=0,energy=0,frameId=0;
+
+  function resizeStrings(){
+    if(!pen) return;
+    var bounds=strings.getBoundingClientRect();
+    width=bounds.width; height=bounds.height;
+    var ratio=Math.min(window.devicePixelRatio||1,2);
+    strings.width=Math.round(width*ratio);
+    strings.height=Math.round(height*ratio);
+    pen.setTransform(ratio,0,0,ratio,0,0);
+    drawStrings(performance.now());
   }
+
+  function drawStrings(now){
+    if(!pen || !width || !height) return;
+    pen.clearRect(0,0,width,height);
+    var mobile=width<=700;
+    var first=height*(mobile?.85:.74);
+    var step=height*(mobile?.02:.034);
+    var split=mobile?width:width*(width<=900?.52:.55);
+    function drawHalf(left,right,onPhoto){
+      pen.save();
+      pen.beginPath(); pen.rect(left,0,right-left,height); pen.clip();
+      for(var line=0;line<6;line++){
+        pen.beginPath();
+        var band=freq?freq[Math.min(freq.length-1,8+line*12)]/255:0;
+        var amplitude=reduce?0:energy*(5+band*24)*(1-line*.055);
+        for(var x=0;x<=width+5;x+=5){
+          var edge=Math.sin(Math.PI*Math.min(x,width)/width);
+          var sample=wave?(wave[(Math.floor(x/width*(wave.length-1))+line*23)%wave.length]-128)/128:0;
+          var vibration=Math.sin(x*.023+now*.006*(1+line*.045))*.6+sample*.5;
+          var y=first+line*step+vibration*amplitude*edge;
+          if(x===0) pen.moveTo(x,y); else pen.lineTo(x,y);
+        }
+        pen.strokeStyle=onPhoto?'rgba(255,255,255,.75)':(line===2?'rgba(226,58,34,.74)':'rgba(39,67,199,.36)');
+        pen.lineWidth=line===2?1.6:1.15;
+        pen.stroke();
+      }
+      pen.restore();
+    }
+    drawHalf(0,width,false);
+    if(!mobile) drawHalf(split,width,true);
+  }
+
+  function connectAudio(){
+    if(reduce || audioContext || !pen) return;
+    var AudioContextType=window.AudioContext||window.webkitAudioContext;
+    if(!AudioContextType) return;
+    try{
+      audioContext=new AudioContextType();
+      analyser=audioContext.createAnalyser();
+      analyser.fftSize=1024;
+      analyser.smoothingTimeConstant=.78;
+      audioContext.createMediaElementSource(heroAudio).connect(analyser);
+      analyser.connect(audioContext.destination);
+      wave=new Uint8Array(analyser.fftSize);
+      freq=new Uint8Array(analyser.frequencyBinCount);
+    }catch(error){
+      analyser=null; wave=null; freq=null;
+    }
+  }
+
+  function animateStrings(now){
+    frameId=0;
+    if(!reduce && analyser && !heroAudio.paused){
+      analyser.getByteTimeDomainData(wave);
+      analyser.getByteFrequencyData(freq);
+      var sum=0;
+      for(var i=0;i<wave.length;i+=4){var sample=(wave[i]-128)/128;sum+=sample*sample;}
+      var target=Math.min(1,Math.sqrt(sum/(wave.length/4))*5.5);
+      energy=energy*.76+target*.24;
+    }else if(!reduce && !heroAudio.paused){
+      energy=energy*.82+.16;
+    }else{
+      energy*=.91;
+    }
+    drawStrings(now);
+    if(!heroAudio.paused || energy>.008) frameId=requestAnimationFrame(animateStrings);
+  }
+
+  function startStrings(){
+    if(!pen || reduce || frameId) return;
+    frameId=requestAnimationFrame(animateStrings);
+  }
+
+  if(pen){
+    hero.classList.add('visual-ready');
+    resizeStrings();
+    addEventListener('resize',resizeStrings,{passive:true});
+  }
+  soundButton.addEventListener('click',function(){
+    if(!heroAudio.paused){heroAudio.pause();return;}
+    connectAudio();
+    if(audioContext && audioContext.state==='suspended') audioContext.resume().catch(function(){});
+    if(heroAudio.ended) heroAudio.currentTime=0;
+    heroAudio.play().catch(function(){
+      soundLabel.textContent='再生できませんでした';
+      soundButton.setAttribute('aria-label','音を再生できませんでした。もう一度試す');
+    });
+  });
+  heroAudio.addEventListener('play',function(){
+    document.querySelectorAll('audio').forEach(function(other){if(other!==heroAudio) other.pause();});
+    hero.classList.add('is-playing');
+    soundButton.setAttribute('aria-pressed','true');
+    soundButton.setAttribute('aria-label','雨のち晴れの試聴を止める');
+    soundLabel.textContent='音を止める';soundIcon.textContent='Ⅱ';
+    startStrings();
+  });
+  function soundStopped(){
+    hero.classList.remove('is-playing');
+    soundButton.setAttribute('aria-pressed','false');
+    soundButton.setAttribute('aria-label','雨のち晴れの試聴を再生');
+    soundLabel.textContent='音を聴く';soundIcon.textContent='▶';
+    startStrings();
+  }
+  heroAudio.addEventListener('pause',soundStopped);
+  heroAudio.addEventListener('ended',soundStopped);
+  document.querySelectorAll('audio').forEach(function(other){
+    if(other!==heroAudio) other.addEventListener('play',function(){heroAudio.pause();});
+  });
+  document.addEventListener('visibilitychange',function(){if(document.hidden) heroAudio.pause();});
 
   /* reveals */
   var rv=document.querySelectorAll('.rv, .sh');
