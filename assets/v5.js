@@ -218,6 +218,27 @@
       }
     });
   }
+
+  /* ---------- 公演のフライヤー画像（assets/live/<公演ID>.webp があれば表示） ---------- */
+  const addFlyer = el => {
+    if (el.dataset.flyer) return;
+    el.dataset.flyer = '1';
+    const id = el.dataset.showId;
+    if (!id || !/^[\w-]+$/.test(id)) return;
+    const src = `assets/live/${id}.webp`;
+    const fig = document.createElement('a');
+    fig.className = 'v5-flyer'; fig.href = src; fig.target = '_blank'; fig.rel = 'noopener';
+    fig.setAttribute('aria-label', 'フライヤーを大きく見る');
+    const img = new Image(); img.alt = 'フライヤー'; img.loading = 'lazy'; img.src = src;
+    img.onerror = () => fig.remove();
+    fig.appendChild(img);
+    el.classList.add('has-flyer');
+    el.prepend(fig);
+  };
+  const scanShows = () => document.querySelectorAll('[data-show-id]').forEach(addFlyer);
+  new MutationObserver(scanShows).observe(document.body, { childList: true, subtree: true });
+  scanShows();
+
   /* ---------- CONTACT のリンクは、そのページでパネルを開く ---------- */
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href$="#contact"]');

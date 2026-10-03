@@ -214,3 +214,12 @@ main .lede,main h1,main h2,main h3,main h4{color:inherit}
 .v5-other-works .clist li{list-style:none;display:grid;grid-template-columns:minmax(160px,22%) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
 .v5-other-works .clist li>*:first-child{color:var(--blue);font-size:1.15rem}
 @media (max-width:600px){.v5-other-works .clist li{grid-template-columns:1fr;gap:6px}}
+
+/* 公演のフライヤー */
+.show.has-flyer,.next-show.has-flyer{display:grid!important;grid-template-columns:minmax(160px,240px) 1fr;gap:28px;align-items:start}
+.show.has-flyer>.v5-flyer{grid-row:1/4}
+.next-show.has-flyer>.v5-flyer{grid-row:1/5}
+.v5-flyer{display:block;box-shadow:0 18px 40px -18px rgba(22,23,27,.45);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.v5-flyer:hover{transform:rotate(-1.5deg) scale(1.02)}
+.v5-flyer img{display:block;width:100%;height:auto}
+@media (max-width:600px){.show.has-flyer,.next-show.has-flyer{grid-template-columns:1fr}.show.has-flyer>.v5-flyer,.next-show.has-flyer>.v5-flyer{grid-row:auto;max-width:300px}}
