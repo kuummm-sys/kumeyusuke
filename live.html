@@ -115,7 +115,7 @@
         <div class="field full"><label for="message">メッセージ <span class="optional">（任意）</span></label><textarea id="message" name="message" maxlength="1000"></textarea></div>
       </div>
       <label class="consent"><input id="consent" type="checkbox" required><span>個人情報の取り扱いに同意します</span></label>
-      <p class="privacy">お名前・メールアドレスなどは、予約の管理とご連絡のためだけに使い、公演終了後3か月で削除します。</p>
+      <p class="privacy">お名前・メールアドレスなどは、予約の管理とご連絡のためだけに使います。</p>
       <button id="submit" class="submit" type="submit" disabled>予約する</button>
       <p id="result" class="result" role="status" aria-live="polite" hidden></p>
     </form>
@@ -126,7 +126,7 @@
 (() => {
   'use strict';
   // 設置後、デプロイした Web アプリの /exec URL に置き換える。
-  const API_URL = 'PASTE_GAS_WEB_APP_URL';
+  const API_URL = 'https://script.google.com/macros/s/AKfycby08szHstuT7JYxyRSol6xAzd7VcwcffgbQjrkmHVElP4BqDJo8y1i4xDpv8t6qFYk5/exec';
   const showsNode = document.getElementById('shows');
   const select = document.getElementById('show-id');
   const form = document.getElementById('reservation-form');
